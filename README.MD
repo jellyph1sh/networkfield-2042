@@ -12,7 +12,7 @@ Ce sont ses missions, les missions seront disponibles par secteur avec une missi
 pour débloquer le secteur suivant et des missions dites secondaires pour récolter des fonds. 
 Les missions sont composées d’une interface avec une suite de mots qu’il faudra compléter un à un le plus rapidement possible. 
 Les fonds permettront au joueur d’investir dans un meilleur équipement qu’il pourra acheter dans l’interface boutique ainsi que consulter l’équipement 
-qu’il a déjà dans une section inventaire.Certaines mécaniques sont inspirées du jeu [http://s0urce.io/](s0urce.io).
+qu’il a déjà dans une section inventaire.Certaines mécaniques sont inspirées du jeu [s0urce.io](http://s0urce.io/).
 
 ## OUTILS :
     - GitHub
