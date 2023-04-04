@@ -1,12 +1,12 @@
 # NETWORKFIELD 2042
 
 ## INTRIGUE :
-    L’an 2042 est révolu. Internet n’est plus l’espace libre qu’il était. De puissantes instances multinationales scannent, espionnent chaque recoin du réseau.
+L’an 2042 est révolu. Internet n’est plus l’espace libre qu’il était. De puissantes instances multinationales scannent, espionnent chaque recoin du réseau.
 La vie privée des gens est passée au peigne fin par des millions de robots à chaque instant. Vous allez incarnez le hacker, 
 qui va redonner à Internet sa liberté d’antan en piratant les différentes instances du monde entier qui gangrène Internet.
 
 ## CONCEPT :
-    Le joueur va évoluer dans l’environnement du hacker avec son interface d’ordinateur. Vous trouverez dans cette interface 
+Le joueur va évoluer dans l’environnement du hacker avec son interface d’ordinateur. Vous trouverez dans cette interface 
 une carte du monde avec les différentes cibles auxquelles le joueur va s’attaquer.
 Ce sont ses missions, les missions seront disponibles par secteur avec une mission principale 
 pour débloquer le secteur suivant et des missions dites secondaires pour récolter des fonds. 
