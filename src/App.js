@@ -1,9 +1,10 @@
 import React from 'react';
+import Mission from './components/Mission';
 
 const App = () => {
   return (
     <div>
-      <h1>Hello Networkfield 2042!</h1>
+      <Mission />
     </div>
   );
 };
