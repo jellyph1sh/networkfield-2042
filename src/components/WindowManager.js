@@ -1,14 +1,19 @@
 import React, { useRef, useState } from "react";
 import Window from "./Window.js";
 
-const WindowManager = ({ width, height, name, left, top, urlIcon }) => {
+const WindowManager = ({ width, height, windowName, left, top, urlIcon }) => {
   const [showWindow, setShowWindow] = useState(false);
 
   const ButtonWindow = (urlIcon) => {
     return (
       <div
         onClick={() => {
-          setShowWindow(true);
+          setShowWindow(() => {
+            if (showWindow) {
+              return false;
+            }
+            return true;
+          });
         }}
         className="buttonWindow"
       >
@@ -18,15 +23,21 @@ const WindowManager = ({ width, height, name, left, top, urlIcon }) => {
   };
 
   const element = showWindow ? (
-    <Window
-      width={`700px`}
-      height={`900px`}
-      name={"window test"}
-      top={"200px"}
-      left={"400px"}
-    ></Window>
+    <div>
+      <Window
+        width={width}
+        height={height}
+        windowName={windowName}
+        top={top}
+        left={left}
+        setShowWindow={setShowWindow}
+      ></Window>
+      <ButtonWindow urlIcon={urlIcon} />
+    </div>
   ) : (
-    <ButtonWindow urlIcon={urlIcon} />
+    <div>
+      <ButtonWindow urlIcon={urlIcon} />
+    </div>
   );
 
   return <div>{element}</div>;
