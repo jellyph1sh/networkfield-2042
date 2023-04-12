@@ -1,6 +1,14 @@
 import React, { useRef, useState } from "react";
 
-const Window = ({ width, height, windowName, left, top, setShowWindow }) => {
+const Window = ({
+  width,
+  height,
+  windowName,
+  left,
+  top,
+  setShowWindow,
+  children,
+}) => {
   const styleWindow = useRef({
     index: {
       left: `${left}`,
@@ -19,7 +27,6 @@ const Window = ({ width, height, windowName, left, top, setShowWindow }) => {
   });
   const styleHeader = useRef({ style: styleWindow.defaultHeader });
   let moveInX, moveInY;
-  console.log(styleHeader.current.style);
   const move = (event) => {
     const element = document.getElementById(windowName);
     element.style.left = `${event.pageX - moveInX}px`;
@@ -62,6 +69,7 @@ const Window = ({ width, height, windowName, left, top, setShowWindow }) => {
           ❌
         </button>
       </div>
+      <div id="child-container">{children}</div>
     </div>
   );
 };
