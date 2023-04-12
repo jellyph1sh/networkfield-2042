@@ -1,0 +1,59 @@
+#upgrade-container{
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    color: white;
+}
+
+#player-money-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.one-upgrade{
+    display: grid;
+    grid-template-columns: 1fr 5rem;
+    grid-template-rows: 1fr 1fr; 
+    align-items: center;
+}
+
+.one-upgrade:first-child{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#data-stat-container{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.one-upgrade button{
+    grid-column: 2;
+    grid-row:2;
+}
+
+.hidden{
+    display: none;
+}
+
+.showError{
+    animation: error-message 6s;
+    position: absolute;
+    border: 1.5px white solid;
+    background-color: orange;
+    columns: white;
+    align-self: center;
+    border: red 2px solid;
+}
+
+@keyframes error-message{
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0%;
+    }
+}
