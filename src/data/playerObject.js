@@ -1,4 +1,4 @@
-const playerData = {
+export const playerData = {
   computer: {
     ram: {
       name: "ram",
@@ -11,12 +11,6 @@ const playerData = {
       currentLevel: 1,
       maxLevel: 7,
       price: 1.4,
-    },
-    gpu: {
-      name: "gpu",
-      currentLevel: 1,
-      maxLevel: 5,
-      price: 1.5,
     },
   },
   name: "",

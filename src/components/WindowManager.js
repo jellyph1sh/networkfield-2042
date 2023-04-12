@@ -1,7 +1,15 @@
 import React, { useRef, useState } from "react";
 import Window from "./Window.js";
 
-const WindowManager = ({ width, height, windowName, left, top, urlIcon }) => {
+const WindowManager = ({
+  width,
+  height,
+  windowName,
+  left,
+  top,
+  urlIcon,
+  children,
+}) => {
   const [showWindow, setShowWindow] = useState(false);
 
   const ButtonWindow = (urlIcon) => {
@@ -31,6 +39,7 @@ const WindowManager = ({ width, height, windowName, left, top, urlIcon }) => {
         top={top}
         left={left}
         setShowWindow={setShowWindow}
+        children={children}
       ></Window>
       <ButtonWindow urlIcon={urlIcon} />
     </div>
