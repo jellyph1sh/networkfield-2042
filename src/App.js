@@ -1,8 +1,7 @@
-//import react func
-import React from "react";
+import React from 'react';
 
-//import compenents
-import Window from "./components/Window.js";
+import Mission from './components/Mission';
+//import Window from "./components/Window.js";
 import WindowManager from "./components/WindowManager.js";
 
 //import styles
@@ -12,6 +11,7 @@ import "./styles/pages/mainPage.css";
 const App = () => {
   return (
     <div>
+      <Mission></Mission>
       <h1>Hello Networkfield 2042!</h1>
       <WindowManager
         width={`700px`}
