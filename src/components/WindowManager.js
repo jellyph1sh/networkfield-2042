@@ -11,12 +11,20 @@ const WindowManager = ({
   children,
 }) => {
   const [showWindow, setShowWindow] = useState(false);
-
-  const ButtonWindow = (urlIcon) => {
+  const styleWindow = useRef({
+    index: {
+      left: `${left}`,
+      top: `${top}`,
+      width: `${width}`,
+      height: `${height}`,
+    },
+  });
+  const ButtonWindow = ({ urlIcon }) => {
     return (
       <div
         onClick={() => {
           setShowWindow(() => {
+            console.log(showWindow);
             if (showWindow) {
               return false;
             }
@@ -25,7 +33,7 @@ const WindowManager = ({
         }}
         className="buttonWindow"
       >
-        <img src={urlIcon} />
+        <img src={urlIcon} className="icon-app-task-barre" />
       </div>
     );
   };
@@ -40,6 +48,7 @@ const WindowManager = ({
         left={left}
         setShowWindow={setShowWindow}
         children={children}
+        styleWindow={styleWindow}
       ></Window>
       <ButtonWindow urlIcon={urlIcon} />
     </div>
