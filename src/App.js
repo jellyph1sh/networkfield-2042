@@ -1,7 +1,7 @@
-//import react func
-import React from "react";
+import React from 'react';
 
 //import compenents
+import Mission from './components/Mission';
 import WindowManager from "./components/WindowManager.js";
 import Shop from "./components/Shop.js";
 
@@ -20,6 +20,7 @@ playerTest.money = 9999
 const App = () => {
   return (
     <div>
+      <Mission></Mission>
       <h1>Hello Networkfield 2042!</h1>
       <WindowManager
         width={`700px`}
