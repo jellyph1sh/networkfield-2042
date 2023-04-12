@@ -109,7 +109,7 @@ const WordsLevel = {
   ],
 };
 
-const getWords = (level, nbWords) => {
+export const getWords = (level, nbWords) => {
   const words = WordsLevel["lvl" + level];
   if (words.length <= nbWords) {
     return words;
@@ -132,54 +132,3 @@ const getRandomIndex = (nbIndex) => {
   }
   return result;
 };
-
-console.log([
-  "ls",
-  "pwd",
-  "cd",
-  "rm",
-  "cmd",
-  "del",
-  "echo",
-  "exit",
-  "find",
-  "getmac",
-  "help",
-  "ipconfig",
-  "md",
-  "mkdir",
-  "move",
-  "netstat",
-  "PATH",
-  "ping",
-  "prompt",
-  "run",
-  "change",
-  "create",
-  "delete",
-  "end",
-  "query",
-  "set",
-  "shutdown",
-  "start",
-  "telnet",
-  "timeout",
-  "tree",
-  "xcopy",
-  "arp",
-  "break",
-  "chgport",
-  "extract",
-  "for",
-  "ftp",
-  "label",
-  "lock",
-  "net",
-  "nslookup",
-  "pause",
-  "print",
-  "reset",
-  "type",
-  "scan",
-  "grep",
-].length)

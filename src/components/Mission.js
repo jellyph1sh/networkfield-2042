@@ -1,15 +1,16 @@
 import React, { useRef, useState } from 'react';
+import { getWords } from "../data/wordsMission.js";
 
-const Mission = (difficulty=1, isTimer = false, timer=0, inputType="text") => {
-    const words = ["ls","pwd","cd","rm","cmd","del","echo","exit","find","getmac","help","ipconfig","md","mkdir","move","netstat","PATH","ping","prompt","run","change","create","delete","end","query","set","shutdown","start","telnet","timeout","tree","xcopy","arp","break","chgport","extract","for","ftp","label","lock","net","nslookup","pause","print","reset","type","scan","grep"];
+const Mission = ({difficulty=1, nbWords = 10, isTimer = false, timer=30, inputType="text"}) => {
+    const words = useRef(getWords(difficulty, nbWords));
     const inputRef = useRef(null);
     const [getCounter, setCounter] = React.useState(timer);
-    const [getIndex, setIndex] = useState(0);
-    const [getWord, setWord] = useState(words[getIndex]);
+    const index = useRef(0);
+    const [getWord, setWord] = useState(words.current[index.current]);
     const [getErrorMessage, setErrorMessage] = useState("");
     const [isFinish, setFinish] = useState(false);
 
-    const inputWord = <input ref={inputRef} type={inputType} name="enterWord" autoFocus autocomplete="off"/>
+    const inputWord = <input ref={inputRef} type={inputType} name="enterWord" autoFocus autoComplete="off"/>
     
     React.useEffect(() => {
         let timer;
@@ -33,13 +34,14 @@ const Mission = (difficulty=1, isTimer = false, timer=0, inputType="text") => {
     const checkWord = (e) => {
         e.preventDefault();
 
+        console.log(checkIsWord(e.target.enterWord.value, getWord))
         if (checkIsWord(e.target.enterWord.value, getWord)) {
-            if (getIndex === words.length - 1) {
+            if (index.current === words.current.length - 1) {
                 setFinish(true);
             }
             setErrorMessage("");
-            setIndex(getIndex + 1);
-            setWord(words[getIndex]);
+            index.current = index.current + 1;
+            setWord(words.current[index.current]);
         } else {
             setErrorMessage("Wrong word!");
         }
@@ -69,7 +71,7 @@ const Mission = (difficulty=1, isTimer = false, timer=0, inputType="text") => {
                 <label>
                     {getWord}
                     {inputWord}
-                    <input type="submit" hidden />
+                    <input type="submit" />
                 </label>
             </form>
             <p>{getErrorMessage}</p>
