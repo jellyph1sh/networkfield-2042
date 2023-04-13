@@ -4,6 +4,8 @@
     position: absolute;
     display: flex;
     flex-direction: column;
+    z-index: 1;
+    transition: transform 0.22s;
   }
   
   .header-window{
@@ -13,6 +15,11 @@
     height: fit-content;
     cursor: grab;
     justify-content: flex-end;
+  }
+
+  .header-window:focus{
+    width: 150%;
+    background-color: rgb(20, 20, 20);
   }
   
   .header-window button{

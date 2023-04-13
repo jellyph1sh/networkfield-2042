@@ -31,7 +31,10 @@ const Shop = ({ playerData }) => {
         console.log(stat);
         const buttonForStat =
           stat.currentLevel == stat.maxLevel ? (
-            <button disable style={{ backgroundColor: `grey`, color: `black` }}>
+            <button
+              disable
+              style={{ backgroundColor: `grey`, color: `rgb(0,102,0)` }}
+            >
               maxLevel
             </button>
           ) : (

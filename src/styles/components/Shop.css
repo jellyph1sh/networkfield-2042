@@ -28,6 +28,8 @@
 #data-stat-container{
     grid-column: 1;
     grid-row: 2;
+    display: flex;
+    gap: 0.5em;
 }
 
 .one-upgrade button{

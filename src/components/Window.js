@@ -4,27 +4,10 @@ const Window = ({
   width,
   height,
   windowName,
-  left,
-  top,
   setShowWindow,
   children,
+  styleWindow,
 }) => {
-  const styleWindow = useRef({
-    index: {
-      left: `${left}`,
-      top: `${top}`,
-      width: `${width}`,
-      height: `${height}`,
-    },
-    pressHeader: {
-      height: `8rem`,
-      width: `120%`,
-    },
-    defaultHeader: {
-      height: `5rem`,
-      width: `100%`,
-    },
-  });
   const styleHeader = useRef({ style: styleWindow.defaultHeader });
   let moveInX, moveInY;
   const move = (event) => {
