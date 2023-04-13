@@ -31,7 +31,7 @@ const App = () => {
           windowName={"window test"}
           top={"200px"}
           left={"400px"}
-          urlIcon={"https://cdn-icons-png.flaticon.com/512/2423/2423208.png"}
+          urlIcon={"https://cdn-icons-png.flaticon.com/512/894/894117.png"}
           children={<Shop playerData={playerTest}></Shop>}
         ></WindowManager>
         <WindowManager
@@ -40,7 +40,7 @@ const App = () => {
           windowName={"window test"}
           top={"200px"}
           left={"400px"}
-          urlIcon={"https://cdn-icons-png.flaticon.com/512/3019/3019021.png"}
+          urlIcon={"https://img.icons8.com/fluency/256/internet.png"}
         ></WindowManager>
       </TaskBarre>
     </div>
