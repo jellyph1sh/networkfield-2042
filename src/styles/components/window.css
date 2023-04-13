@@ -12,17 +12,18 @@
     background-color: rgb(13,13,13);
     display: flex;
     width: 100%;
-    height: fit-content;
+    height: 1.5rem;
     cursor: grab;
     justify-content: flex-end;
   }
 
-  .header-window:focus{
-    width: 150%;
+  .header-window:active{
+    height: 1.8rem;
     background-color: rgb(20, 20, 20);
   }
   
   .header-window button{
+    height: 100%;
     align-self: flex-end;
     border: none;
     background-color: rgb(13,13,13);
