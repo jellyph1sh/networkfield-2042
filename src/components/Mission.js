@@ -8,6 +8,9 @@ const Mission = ({
   timer = 30,
   inputType = "text",
   setShowWindow,
+  malus = false,
+  setPlayerData,
+  playerData,
 }) => {
   const words = useRef(getWords(difficulty, nbWords));
   const inputRef = useRef(null);
@@ -80,6 +83,13 @@ const Mission = ({
   }
 
   if (isTimer === true && getCounter === 0 && !isFinish) {
+    if (malus) {
+      setPlayerData((playerData) => ({
+        ...playerData,
+        money: playerData.money * 0.7,
+      }));
+    }
+
     return (
       <div>
         <h1>Time Over!</h1>

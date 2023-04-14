@@ -21,7 +21,7 @@ playerTest.name = "playerTest";
 playerTest.money = 0.9;
 
 const App = () => {
-  let moneyStage = 1;
+  const moneyStage = useRef({ stage: 1 });
   const [playerData, setPlayerData] = useState(playerTest);
   const [showHackingWindow, setShowHackingWindow] = useState(false);
   const styleWindowHack = useRef({
@@ -33,7 +33,7 @@ const App = () => {
     },
   });
 
-  const hackPlayerMission = (
+  let hackPlayerMission = (
     <Window
       width={styleWindowHack.current.index.width}
       height={styleWindowHack.current.index.height}
@@ -52,25 +52,33 @@ const App = () => {
   );
 
   useEffect(() => {
-    if (playerData.money >= moneyStage) {
+    if (playerData.money >= moneyStage.current.stage) {
+      moneyStage.current.stage = moneyStage.current.stage * 10;
+      console.log(moneyStage);
+      hackPlayerMission = (
+        <Window
+          width={styleWindowHack.current.index.width}
+          height={styleWindowHack.current.index.height}
+          windowName={"hackPlayerWindow"}
+          setShowWindow={setShowHackingWindow}
+          styleWindow={styleWindowHack}
+          children={
+            <Mission
+              isTimer={true}
+              difficulty={playerData.currentLevel}
+              setShowWindow={setShowHackingWindow}
+            ></Mission>
+          }
+          canCloseWindow={false}
+        ></Window>
+      );
       setShowHackingWindow(true);
-      moneyStage *= 10;
     }
   }, [playerData]);
 
   return (
     <div id="main-container">
       {showHackingWindow ? hackPlayerMission : null}
-      <button
-        onClick={() => {
-          console.log(playerData.money);
-          setPlayerData((playerData) => ({
-            ...playerData,
-            ...{ money: playerData.money + 1 },
-          }));
-          console.log(playerData.money);
-        }}
-      ></button>
       <TaskBarre>
         <WindowManager
           width={`700px`}
