@@ -80,7 +80,7 @@ const App = () => {
   return (
     <div id="main-container">
       {showHackingWindow ? hackPlayerMission : null}
-      <button
+      {/* <button
         onClick={() => {
           console.log(playerData.money);
           setPlayerData((playerData) => ({
@@ -89,7 +89,7 @@ const App = () => {
           }));
           console.log(playerData.money);
         }}
-      ></button>
+      ></button> */}
       <TaskBarre>
         <WindowManager
           width={`700px`}
