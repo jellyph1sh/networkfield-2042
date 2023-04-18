@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProgressBar from "./ProgressBar.js";
 
-const Shop = ({ playerData }) => {
+const Shop = ({ playerData, setPlayerData }) => {
   const [playerMoney, setPlayerMoney] = useState(playerData.money);
   const [classErrorMessage, setClassErrorMessage] = useState("hidden");
 
@@ -10,7 +10,10 @@ const Shop = ({ playerData }) => {
   };
   const VerifBuy = (price, stat) => {
     if (playerMoney > price) {
-      playerData.money = Math.round((playerData.money - price) * 1000) / 1000;
+      setPlayerData((playerData) => ({
+        ...playerData,
+        ...{ money: Math.round((playerData.money - price) * 1000) / 1000 },
+      }));
       stat.currentLevel++;
       setPlayerMoney(playerData.money);
     } else {
@@ -32,7 +35,7 @@ const Shop = ({ playerData }) => {
         const buttonForStat =
           stat.currentLevel == stat.maxLevel ? (
             <button
-              disable
+              disable={""}
               style={{ backgroundColor: `grey`, color: `rgb(0,102,0)` }}
             >
               maxLevel

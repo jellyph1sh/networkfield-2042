@@ -7,6 +7,7 @@ const Window = ({
   setShowWindow,
   children,
   styleWindow,
+  canCloseWindow = true,
 }) => {
   const styleHeader = useRef({ style: styleWindow.defaultHeader });
   let moveInX, moveInY;
@@ -40,17 +41,19 @@ const Window = ({
     <div style={styleWindow.current.index} id={windowName} className="window">
       <div
         className="header-window"
-        onMouseDown={dragging}
-        onMouseUp={freeze}
+        onPointerDown={dragging}
+        onPointerUp={freeze}
         style={styleWindow.current.styleHeader}
       >
-        <button
-          onClick={() => {
-            setShowWindow(false);
-          }}
-        >
-          ❌
-        </button>
+        {canCloseWindow ? (
+          <button
+            onClick={() => {
+              setShowWindow(false);
+            }}
+          >
+            ❌
+          </button>
+        ) : null}
       </div>
       <div id="child-container">{children}</div>
     </div>

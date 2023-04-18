@@ -15,4 +15,5 @@ export const playerData = {
   },
   name: "",
   money: 0,
+  currentLevel: 1,
 };
