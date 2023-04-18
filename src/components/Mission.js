@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { getWords } from "../data/wordsMission.js";
+import ProgressBar from "./ProgressBar.js";
 
 const Mission = ({
   difficulty = 1,
@@ -17,8 +18,9 @@ const Mission = ({
   const [getCounter, setCounter] = React.useState(timer);
   const index = useRef(0);
   const [getWord, setWord] = useState(words.current[index.current]);
-  const [getErrorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
   const [isFinish, setFinish] = useState(false);
+  const allTry = useRef({ trials: [] });
 
   const inputWord = (
     <input
@@ -27,7 +29,7 @@ const Mission = ({
       name="enterWord"
       autoFocus
       autoComplete="off"
-    />
+    ></input>
   );
 
   React.useEffect(() => {
@@ -51,25 +53,25 @@ const Mission = ({
 
   const checkWord = (e) => {
     e.preventDefault();
-
+    setErrorMessage(null);
+    allTry.current.trials.push("$ " + e.target.enterWord.value);
     console.log(checkIsWord(e.target.enterWord.value, getWord));
     if (checkIsWord(e.target.enterWord.value, getWord)) {
       if (index.current === words.current.length - 1) {
         setFinish(true);
       }
-      setErrorMessage("");
       index.current = index.current + 1;
       setWord(words.current[index.current]);
     } else {
-      setErrorMessage("Wrong word!");
+      setErrorMessage(<p id="error-message">Wrong command!</p>);
     }
     inputRef.current.value = "";
   };
 
   if (isFinish) {
     return (
-      <div>
-        <h1>DONE!</h1>
+      <div id="mission-container-finished">
+        <h1> DONE!</h1>
         <button
           onClick={() => {
             setShowWindow(false);
@@ -91,9 +93,9 @@ const Mission = ({
     }
 
     return (
-      <div>
-        <h1>Time Over!</h1>
-        <h2>You lose!</h2>
+      <div id="mission-container-finished">
+        <h1 className="loose-text">Time Over!</h1>
+        <h2 className="loose-text">You lose!</h2>
         <button
           onClick={() => {
             setShowWindow(false);
@@ -105,25 +107,33 @@ const Mission = ({
       </div>
     );
   }
+
   return (
-    <div>
+    <div id="mission-container">
+      {isTimer ? (
+        getCounter === 0 ? null : (
+          <div id="countdown-container">
+            <p>Countdown: {getCounter} seconds</p>
+          </div>
+        )
+      ) : null}
+      <div id="trials-container">
+        {Object.keys(allTry.current.trials).map((key, i) => {
+          return <li key={i}>{allTry.current.trials[key]}</li>;
+        })}
+      </div>
       <form onSubmit={checkWord}>
-        {isTimer ? (
-          getCounter === 0 ? (
-            ""
-          ) : (
-            <div>Countdown: {getCounter} seconds</div>
-          )
-        ) : (
-          ""
-        )}
         <label>
-          {getWord}
+          <p id="word-to-write">{getWord}</p>
           {inputWord}
-          <input type="submit" />
+          <input type="submit" hidden />
+          <ProgressBar
+            currentLevel={index.current}
+            maxLevel={words.current.length}
+          ></ProgressBar>
         </label>
       </form>
-      <p>{getErrorMessage}</p>
+      {errorMessage}
     </div>
   );
 };

@@ -12,6 +12,7 @@ import "./styles/components/window.css";
 import "./styles/pages/mainPage.css";
 import "./styles/components/Shop.css";
 import "./styles/components/taskBarre.css";
+import "./styles/components/mission.css";
 
 //import data
 import { playerData } from "./datas/playerObject.js";
@@ -27,9 +28,9 @@ const App = () => {
   const styleWindowHack = useRef({
     index: {
       left: `${"400px"}`,
-      top: `${"200px"}`,
-      width: `${"500px"}`,
-      height: `${"600px"}`,
+      top: `${"100px"}`,
+      width: `${"400px"}`,
+      height: `${"500px"}`,
     },
   });
 
@@ -79,6 +80,16 @@ const App = () => {
   return (
     <div id="main-container">
       {showHackingWindow ? hackPlayerMission : null}
+      <button
+        onClick={() => {
+          console.log(playerData.money);
+          setPlayerData((playerData) => ({
+            ...playerData,
+            ...{ money: playerData.money + 1 },
+          }));
+          console.log(playerData.money);
+        }}
+      ></button>
       <TaskBarre>
         <WindowManager
           width={`700px`}

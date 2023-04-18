@@ -1,0 +1,108 @@
+#mission-container{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 3rem 1fr 4rem;
+    color: rgb(200, 200, 200);
+}
+
+#countdown-container{
+    grid-row: 1;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+#countdown-container p{
+    width: fit-content;
+    align-self: center;
+}
+
+#trials-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: fit-content;
+    max-height: 100%;
+    overflow-y:hidden;
+    grid-row: 2;
+    list-style: none;
+    padding-left: 1rem;
+}
+
+#mission-container form{
+    gap: 0.5rem;
+}
+
+#mission-container form label{
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#mission-container form input{
+    background-color: rgb(13, 13,13);
+    border: none;
+    color: rgb(200, 200, 200);
+    width: 98%;
+    align-self: center;
+}
+
+#mission-container form input:focus{
+    outline: none;
+}
+
+#data-stat-level{
+    margin: 0;
+}
+
+#error-message{
+    position: absolute;
+    background-color: orange;
+    color: red;
+    align-self: center;
+    justify-self: center;
+    padding-inline: 0.5rem;
+}
+
+
+#word-to-write{
+    margin: 0;
+    margin-left: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#mission-container-finished{
+    height: 100%;
+    color: green;
+    display: flex;
+    flex-direction: column;
+    padding-top: 25%;
+    text-align: center;
+    gap: 2rem;
+}
+
+#mission-container-finished button{
+    background-color: rgb(200, 200, 200);
+    border-color: rgb(13, 13,13);
+    color: rgb(13, 13,13);
+    width: fit-content;
+    padding-inline: 0.5rem;
+    align-self: center;
+    outline: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.loose-text{
+    color: red;
+}
+/* 
+@keyframes hideSlowly {
+    from{
+        opacity: 100%;
+    }
+    to{
+        opacity: 0%;
+    }
+} */
