@@ -4,7 +4,7 @@ body{
     padding: 0;
     margin: 0;
     gap: 0;
-    background-color: darkgrey;
+    background-color: rgb(0,0,0);
     cursor: default;
     user-select: none;
     font-family: Consolas, Courier, monospace;
@@ -16,6 +16,15 @@ body{
   display: grid;
   grid-template-rows: 1fr 3rem;
   height: 100vh;
+}
+
+#background-container{
+  grid-row: 1;
+  background-image: url("./background-networkfieldjpg.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 35%;
+  object-fit: 2%;
 }
 
 #hidden{
