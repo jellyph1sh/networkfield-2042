@@ -95,7 +95,7 @@ const App = () => {
         <WindowManager
           width={`700px`}
           height={`500px`}
-          windowName={"window test"}
+          windowName={"Shop"}
           top={"200px"}
           left={"400px"}
           urlIcon={"https://cdn-icons-png.flaticon.com/512/894/894117.png"}
