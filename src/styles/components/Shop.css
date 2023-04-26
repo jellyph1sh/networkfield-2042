@@ -1,23 +1,53 @@
-#upgrade-container{
+#main-upgrade-container{
     display: flex;
     width: 90%;
     flex-direction: column;
     justify-content: center;
     align-self: center;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+#upgrade-container{
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     color: white;
+    height: fit-content;
+    max-height: 420px;
+}
+
+#upgrade-container::-webkit-scrollbar{
+    width: 8px;
+}
+
+#upgrade-container::-webkit-scrollbar-track{
+    border-radius: 12px;
+    background-color: rgb(15,15,15);
+}
+
+#upgrade-container::-webkit-scrollbar-thumb{
+    border-radius: 12px;
+    background-color: rgb(100,100,100);
 }
 
 #player-money-container{
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    color: white;
 }
 
 .one-upgrade{
+    border: rgb(150, 150, 150) 5px double;
+    border-radius: 12px;
     display: grid;
     grid-template-columns: 1fr 5rem;
     grid-template-rows: 1fr 1fr; 
     align-items: center;
+    padding-inline: 2rem;
+    width: 80%;
 }
 
 .one-upgrade:first-child{
