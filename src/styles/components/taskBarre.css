@@ -1,5 +1,5 @@
 #task-barre{
-    align-self: flex-end;
+    align-self: end;
     width: 100vw;
     height: 100%;
     grid-row: 2;
