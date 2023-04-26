@@ -79,6 +79,7 @@ const App = () => {
 
   return (
     <div id="main-container">
+      <div id="background-container"></div>
       {showHackingWindow ? hackPlayerMission : null}
       {/* <button
         onClick={() => {
