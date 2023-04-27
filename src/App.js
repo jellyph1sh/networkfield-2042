@@ -106,7 +106,7 @@ const App = () => {
         <WindowManager
           width={`700px`}
           height={`500px`}
-          windowName={"window test"}
+          windowName={"Map"}
           top={"200px"}
           left={"400px"}
           urlIcon={"https://img.icons8.com/fluency/256/internet.png"}
