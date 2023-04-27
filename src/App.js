@@ -15,7 +15,7 @@ import "./styles/components/taskBarre.css";
 import "./styles/components/mission.css";
 
 //import data
-import { playerData } from "./datas/playerObject.js";
+import { playerData } from "./data/playerObject.js";
 
 const playerTest = playerData;
 playerTest.name = "playerTest";
