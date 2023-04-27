@@ -45,6 +45,7 @@ const Window = ({
         onPointerUp={freeze}
         style={styleWindow.current.styleHeader}
       >
+        <h3>{windowName}</h3>
         {canCloseWindow ? (
           <button
             onClick={() => {

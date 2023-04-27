@@ -11,11 +11,20 @@
   
   .header-window{
     background-color: rgb(13,13,13);
-    display: flex;
+    display: grid;
     width: 100%;
     height: 1.5rem;
     cursor: grab;
-    justify-content: flex-end;
+    grid-template-columns: 1fr 5rem;
+    text-align: center;
+    color: rgb(150, 150, 150);
+  }
+
+  .header-window h3{
+    align-self: center;
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    margin: 0;
   }
 
   .header-window:active{
@@ -24,8 +33,11 @@
   }
   
   .header-window button{
+    grid-row: 1;
+    grid-column: 2;
     height: 100%;
-    align-self: flex-end;
+    justify-self: end;
+    align-self: start;
     border: none;
     background-color: rgb(13,13,13);
     cursor: pointer;

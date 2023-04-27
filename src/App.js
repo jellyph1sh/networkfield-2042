@@ -19,7 +19,7 @@ import { playerData } from "./datas/playerObject.js";
 
 const playerTest = playerData;
 playerTest.name = "playerTest";
-playerTest.money = 0.9;
+playerTest.money = 999990.9;
 
 const App = () => {
   const moneyStage = useRef({ stage: 1 });
@@ -95,7 +95,7 @@ const App = () => {
         <WindowManager
           width={`700px`}
           height={`500px`}
-          windowName={"window test"}
+          windowName={"Shop"}
           top={"200px"}
           left={"400px"}
           urlIcon={"https://cdn-icons-png.flaticon.com/512/894/894117.png"}
@@ -106,7 +106,7 @@ const App = () => {
         <WindowManager
           width={`700px`}
           height={`500px`}
-          windowName={"window test"}
+          windowName={"Map"}
           top={"200px"}
           left={"400px"}
           urlIcon={"https://img.icons8.com/fluency/256/internet.png"}
