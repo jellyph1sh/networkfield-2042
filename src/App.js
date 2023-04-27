@@ -19,7 +19,7 @@ import { playerData } from "./datas/playerObject.js";
 
 const playerTest = playerData;
 playerTest.name = "playerTest";
-playerTest.money = 0.9;
+playerTest.money = 999990.9;
 
 const App = () => {
   const moneyStage = useRef({ stage: 1 });
