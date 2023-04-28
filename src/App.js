@@ -16,6 +16,7 @@ import "./styles/components/mission.css";
 
 //import data
 import { playerData } from "./data/playerObject.js";
+import Map from "./components/Map";
 
 const playerTest = playerData;
 playerTest.name = "playerTest";
@@ -104,12 +105,15 @@ const App = () => {
           }
         ></WindowManager>
         <WindowManager
-          width={`700px`}
-          height={`500px`}
+          width={`95%`}
+          height={`90%`}
           windowName={"window test"}
-          top={"200px"}
-          left={"400px"}
+          top={"5%"}
+          left={"5%"}
           urlIcon={"https://img.icons8.com/fluency/256/internet.png"}
+          children={
+            <Map width={250} height={250}></Map>
+          }
         ></WindowManager>
       </TaskBarre>
     </div>

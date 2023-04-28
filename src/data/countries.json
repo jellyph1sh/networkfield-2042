@@ -1,0 +1,19 @@
+{
+    "continents": [
+        {
+            "names": ["Belgium", "France", "Germany", "Luxembourg", "Poland", "Russia", "United Kingdom"],
+            "coords": [10.00, 50.00],
+            "scale": 500
+        },
+        {
+            "names": ["Canada", "Cuba", "Mexico", "United States of America"],
+            "coords": [-90, 40],
+            "scale": 250
+        },
+        {
+            "names": ["Afghanistan", "China", "India", "Japan", "Kazakhstan", "North Korea", "Russia", "South Korea"],
+            "coords": [90, 30],
+            "scale": 250
+        }
+    ]
+}
