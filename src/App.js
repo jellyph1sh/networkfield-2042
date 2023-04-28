@@ -92,7 +92,10 @@ const App = () => {
 
   if (!lorePassed) {
     return (
-      <div id="generic-container">
+      <div
+        id="generic-container"
+        onContextMenu={(event) => event.preventDefault()}
+      >
         <Generic />
         <button
           id="button-skip-lore"
@@ -107,7 +110,7 @@ const App = () => {
   }
 
   return (
-    <div id="main-container">
+    <div id="main-container" onContextMenu={(event) => event.preventDefault()}>
       <div id="background-container"></div>
       {showHackingWindow ? hackPlayerMission : null}
       {/* <button
