@@ -13,6 +13,7 @@
     font: 1.3rem monospace;
     text-shadow: 0 0 5px rgb(0, 215, 0);
     justify-self: center;
+    margin-top: 5rem;
 }
 
 #button-skip-lore{
