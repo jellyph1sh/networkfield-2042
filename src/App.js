@@ -6,6 +6,7 @@ import WindowManager from "./components/WindowManager.js";
 import Shop from "./components/Shop.js";
 import TaskBarre from "./components/TaskBarre.js";
 import Window from "./components/Window.js";
+import Generic from "./components/Generic.js";
 
 //import styles
 import "./styles/components/window.css";
@@ -13,13 +14,14 @@ import "./styles/pages/mainPage.css";
 import "./styles/components/Shop.css";
 import "./styles/components/taskBarre.css";
 import "./styles/components/mission.css";
+import "./styles/pages/genericPage.css";
 
 //import data
 import { playerData } from "./datas/playerObject.js";
 
 const playerTest = playerData;
 playerTest.name = "playerTest";
-playerTest.money = 999990.9;
+playerTest.money = 0.0;
 
 const App = () => {
   const moneyStage = useRef({ stage: 1 });
@@ -33,19 +35,25 @@ const App = () => {
       height: `${"500px"}`,
     },
   });
+  const [lorePassed, setLorePassed] = useState(false);
 
   let hackPlayerMission = (
     <Window
       width={styleWindowHack.current.index.width}
       height={styleWindowHack.current.index.height}
-      windowName={"hackPlayerWindow"}
+      windowName={"you are being hacked !!"}
       setShowWindow={setShowHackingWindow}
       styleWindow={styleWindowHack}
       children={
         <Mission
+          malus={true}
           isTimer={true}
           difficulty={playerData.currentLevel}
           setShowWindow={setShowHackingWindow}
+          winMessage="Congrats you block the attack"
+          looseMessage={"The hacker still you some money"}
+          setPlayerData={setPlayerData}
+          playerData={playerData}
         ></Mission>
       }
       canCloseWindow={false}
@@ -60,14 +68,19 @@ const App = () => {
         <Window
           width={styleWindowHack.current.index.width}
           height={styleWindowHack.current.index.height}
-          windowName={"hackPlayerWindow"}
+          windowName={"you are being hacked !!"}
           setShowWindow={setShowHackingWindow}
           styleWindow={styleWindowHack}
           children={
             <Mission
+              malus={true}
               isTimer={true}
               difficulty={playerData.currentLevel}
               setShowWindow={setShowHackingWindow}
+              winMessage="Congrats you block the attack"
+              looseMessage={"The hacker still you some money ฿"}
+              setPlayerData={setPlayerData}
+              playerData={playerData}
             ></Mission>
           }
           canCloseWindow={false}
@@ -76,6 +89,22 @@ const App = () => {
       setShowHackingWindow(true);
     }
   }, [playerData]);
+
+  if (!lorePassed) {
+    return (
+      <div id="generic-container">
+        <Generic />
+        <button
+          id="button-skip-lore"
+          onClick={() => {
+            setLorePassed(true);
+          }}
+        >
+          Play
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div id="main-container">
@@ -86,9 +115,8 @@ const App = () => {
           console.log(playerData.money);
           setPlayerData((playerData) => ({
             ...playerData,
-            ...{ money: playerData.money + 1 },
+            ...{ money: playerData.money + 1.0 },
           }));
-          console.log(playerData.money);
         }}
       ></button> */}
       <TaskBarre>
