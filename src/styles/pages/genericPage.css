@@ -1,0 +1,31 @@
+#generic-container{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 30rem 1fr;
+}
+
+#lore-container{
+    grid-row: 1;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    color: green;
+    font: 1.3rem monospace;
+    text-shadow: 0 0 5px rgb(0, 215, 0);
+    justify-self: center;
+}
+
+#button-skip-lore{
+    grid-row: 2;
+    outline: none;
+    width: 5rem;
+    height: 2rem;
+    justify-self: center;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    text-shadow: 0 0 5px rgb(0, 215, 0);
+    box-shadow: 0 0 5px rgb(0, 215, 0);
+    border: 3px solid green;
+    background-color: black;
+}

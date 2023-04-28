@@ -22,8 +22,11 @@
     flex-direction: column;
     justify-content: flex-end;
     height: fit-content;
-    max-height: 100%;
+    height: 90%;
+    max-height: 90%;
+    max-width: fit-content;
     overflow-y:hidden;
+    overflow-wrap: break-word;
     grid-row: 2;
     list-style: none;
     padding-left: 1rem;
@@ -31,6 +34,7 @@
 
 #mission-container form{
     gap: 0.5rem;
+    padding-inline: 0.5rem;
 }
 
 #mission-container form label{
@@ -41,11 +45,13 @@
 }
 
 #mission-container form input{
-    background-color: rgb(13, 13,13);
+    background-color: rgb(50, 50,50);
     border: none;
     color: rgb(200, 200, 200);
+    border-radius: 8px;
     width: 98%;
     align-self: center;
+    padding-inline: 0.5rem;
 }
 
 #mission-container form input:focus{
@@ -96,6 +102,10 @@
 
 .loose-text{
     color: red;
+}
+
+#endMessage{
+    color: white;
 }
 /* 
 @keyframes hideSlowly {
