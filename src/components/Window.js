@@ -1,4 +1,6 @@
 import React, { useRef, useState } from "react";
+import playSoundEffect from "../utils/playSoundEffect.js";
+import soundCloseWindow from "../sound/mouse-click2.mp3";
 
 const Window = ({
   width,
@@ -49,6 +51,7 @@ const Window = ({
         {canCloseWindow ? (
           <button
             onClick={() => {
+              playSoundEffect(soundCloseWindow);
               setShowWindow(false);
             }}
           >

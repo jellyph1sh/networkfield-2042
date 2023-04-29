@@ -17,11 +17,11 @@ import "./styles/components/mission.css";
 import "./styles/pages/genericPage.css";
 
 //import data
-import { playerData } from "./datas/playerObject.js";
+import { playerData } from "./data/playerObject.js";
 
 const playerTest = playerData;
 playerTest.name = "playerTest";
-playerTest.money = 0.0;
+playerTest.money = 0.9;
 
 const App = () => {
   const moneyStage = useRef({ stage: 1 });

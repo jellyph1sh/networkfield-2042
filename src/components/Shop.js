@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import ProgressBar from "./ProgressBar.js";
+import playSoundEffect from "../utils/playSoundEffect.js";
+import buySoundEffect from "../sound/cash-register-fake-88639.mp3";
+import maxLevelButtonSound from "../sound/button-inactive.mp3";
 
 const Shop = ({ playerData, setPlayerData }) => {
   const [playerMoney, setPlayerMoney] = useState(playerData.money);
@@ -10,6 +13,7 @@ const Shop = ({ playerData, setPlayerData }) => {
   };
   const VerifBuy = (price, stat) => {
     if (playerMoney > price) {
+      playSoundEffect(buySoundEffect);
       setPlayerData((playerData) => ({
         ...playerData,
         ...{ money: Math.round((playerData.money - price) * 1000) / 1000 },
@@ -32,11 +36,12 @@ const Shop = ({ playerData, setPlayerData }) => {
       <span className={classErrorMessage}>You cannot buy this</span>
       <div id="upgrade-container">
         {Object.values(playerData.computer).map((stat, i) => {
-          console.log(stat);
           const buttonForStat =
             stat.currentLevel == stat.maxLevel ? (
               <button
-                disable={""}
+                onClick={() => {
+                  playSoundEffect(maxLevelButtonSound);
+                }}
                 style={{ backgroundColor: `grey`, color: `rgb(0,102,0)` }}
               >
                 maxLevel
