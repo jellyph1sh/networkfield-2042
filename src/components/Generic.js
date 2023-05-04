@@ -1,4 +1,6 @@
 import React, { useState, useRef } from "react";
+import playSoundEffect from "../utils/playSoundEffect.js";
+import oneLetterTyping from "../sound/typing_one_letter.mp3";
 
 const Generic = () => {
   const [currentLore, setCurrentLore] = useState("");
@@ -15,7 +17,10 @@ const Generic = () => {
     if (!loreComplete.current.index) {
       setTimeout(() => {
         setCurrentLore((c) => c + allLore.current.index[c.length]);
-      }, 80);
+      }, 76);
+      if (currentLore[currentLore.length - 1] != " ") {
+        playSoundEffect(oneLetterTyping);
+      }
     }
   }, [currentLore]);
 

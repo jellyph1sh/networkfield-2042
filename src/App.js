@@ -17,11 +17,11 @@ import "./styles/components/mission.css";
 import "./styles/pages/genericPage.css";
 
 //import data
-import { playerData } from "./datas/playerObject.js";
+import { playerData } from "./data/playerObject.js";
 
 const playerTest = playerData;
 playerTest.name = "playerTest";
-playerTest.money = 0.0;
+playerTest.money = 0.9;
 
 const App = () => {
   const moneyStage = useRef({ stage: 1 });
@@ -36,6 +36,7 @@ const App = () => {
     },
   });
   const [lorePassed, setLorePassed] = useState(false);
+  const [gameStart, setGameStart] = useState(false);
 
   let hackPlayerMission = (
     <Window
@@ -50,8 +51,8 @@ const App = () => {
           isTimer={true}
           difficulty={playerData.currentLevel}
           setShowWindow={setShowHackingWindow}
-          winMessage="Congrats you block the attack"
-          looseMessage={"The hacker still you some money"}
+          winMessage="Congrats you blocked the attack"
+          looseMessage={"The hacker stole you some money"}
           setPlayerData={setPlayerData}
           playerData={playerData}
         ></Mission>
@@ -77,8 +78,8 @@ const App = () => {
               isTimer={true}
               difficulty={playerData.currentLevel}
               setShowWindow={setShowHackingWindow}
-              winMessage="Congrats you block the attack"
-              looseMessage={"The hacker still you some money ฿"}
+              winMessage="Congrats you blocked the attack"
+              looseMessage={"The hacker stole you some money ฿"}
               setPlayerData={setPlayerData}
               playerData={playerData}
             ></Mission>
@@ -89,6 +90,16 @@ const App = () => {
       setShowHackingWindow(true);
     }
   }, [playerData]);
+
+  if (!gameStart) {
+    return (
+      <div id="main-start-container">
+        <button id="button-start-game" onClick={() => setGameStart(true)}>
+          Start
+        </button>
+      </div>
+    );
+  }
 
   if (!lorePassed) {
     return (
