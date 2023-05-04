@@ -36,6 +36,7 @@ const App = () => {
     },
   });
   const [lorePassed, setLorePassed] = useState(false);
+  const [gameStart, setGameStart] = useState(false);
 
   let hackPlayerMission = (
     <Window
@@ -50,8 +51,8 @@ const App = () => {
           isTimer={true}
           difficulty={playerData.currentLevel}
           setShowWindow={setShowHackingWindow}
-          winMessage="Congrats you block the attack"
-          looseMessage={"The hacker still you some money"}
+          winMessage="Congrats you blocked the attack"
+          looseMessage={"The hacker stole you some money"}
           setPlayerData={setPlayerData}
           playerData={playerData}
         ></Mission>
@@ -77,8 +78,8 @@ const App = () => {
               isTimer={true}
               difficulty={playerData.currentLevel}
               setShowWindow={setShowHackingWindow}
-              winMessage="Congrats you block the attack"
-              looseMessage={"The hacker still you some money ฿"}
+              winMessage="Congrats you blocked the attack"
+              looseMessage={"The hacker stole you some money ฿"}
               setPlayerData={setPlayerData}
               playerData={playerData}
             ></Mission>
@@ -89,6 +90,16 @@ const App = () => {
       setShowHackingWindow(true);
     }
   }, [playerData]);
+
+  if (!gameStart) {
+    return (
+      <div id="main-start-container">
+        <button id="button-start-game" onClick={() => setGameStart(true)}>
+          Start
+        </button>
+      </div>
+    );
+  }
 
   if (!lorePassed) {
     return (
