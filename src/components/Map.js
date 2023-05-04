@@ -1,20 +1,13 @@
 import React, { useState } from "react";
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
 import countries from "../data/countries.json";
+import missions from "../data/missions.json";
 
 const Map = ({width=1920, height=1080}) => {
   const [isZoom, defZoom] = useState(false);
   const [getScale, setScale] = useState(100);
-  const [getZoom, setZoom] = useState([0, 0])
-
-  const markers = [
-    {
-      markerOffset: -15,
-      name: "Sau Paulo",
-      coordinates: [-58.3816, -34.6037],
-    },
-  ]
-  
+  const [getZoom, setZoom] = useState([0, 0]);
+  const [getZone, setZone] = useState(null);
   const geoUrl = "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json"
 
   const selectGeography = (geography) => {
@@ -36,6 +29,7 @@ const Map = ({width=1920, height=1080}) => {
           setScale(100)
           setZoom([0.0, 0.0])
           defZoom(false)
+          setZone(null)
         } else {
           countries["continents"].map((continent) => {
             continent["names"].map((country) => {
@@ -43,6 +37,7 @@ const Map = ({width=1920, height=1080}) => {
                 setScale(continent.scale)
                 setZoom(continent.coords)
                 defZoom(true)
+                setZone(continent.name)
                 return true
               }
               return false
@@ -59,6 +54,24 @@ const Map = ({width=1920, height=1080}) => {
     }}/>
   }
 
+  const selectMarker = (marker) => {
+    if (getZone === marker.zone) {
+      if (marker.isAvailable) {
+        return (<Marker key={marker.name} coordinates={marker.coordinates} onClick = {() => {
+          console.log("HACKING!")
+        }}>
+          <circle r={5} fill="#FFF" stroke="#fff" strokeWidth={2}/>
+          <text textAnchor="middle" y={marker.markerOffset} style={{ fontFamily: "system-ui", fill: "#FFF"}}>{marker.name}</text>
+        </Marker>)
+      } else {
+        return (<Marker key={marker.name} coordinates={marker.coordinates}>
+          <circle r={5} fill="#FFF" stroke="#fff" strokeWidth={2}/>
+          <text textAnchor="middle" y={marker.markerOffset} style={{ fontFamily: "system-ui", fill: "#FFF"}}>{marker.name}</text>
+        </Marker>)
+      }
+    }
+  }
+
   return (
     <ComposableMap projection={"geoEqualEarth"} projectionConfig={{
       scale: getScale,
@@ -72,13 +85,8 @@ const Map = ({width=1920, height=1080}) => {
         }
       </Geographies>
       {
-        markers.map(({name, coordinates, markerOffset}) => (
-          <Marker key={name} coordinates={coordinates} onClick = {() => {
-            console.log("HACKING!")
-          }}>
-            <circle r={10} fill="#F00" stroke="#fff" strokeWidth={2}/>
-            <text textAnchor="middle" y={markerOffset} style={{ fontFamily: "system-ui", fill: "#5D5A6D"}}>{name}</text>
-          </Marker>
+        missions["missions"].map((mission) => (
+          selectMarker(mission)
         ))
       }
     </ComposableMap>);
