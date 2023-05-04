@@ -94,6 +94,7 @@ const App = () => {
   if (!gameStart) {
     return (
       <div id="main-start-container">
+        <h1>NetworkField 2042</h1>
         <button id="button-start-game" onClick={() => setGameStart(true)}>
           Start
         </button>
