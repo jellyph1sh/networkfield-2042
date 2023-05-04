@@ -1,0 +1,11 @@
+{
+    "missions": [
+        {
+            "offset": -15,
+            "name": "Paris",
+            "coordinates": [2.00, 48.00],
+            "zone": "Europa",
+            "isAvailable": true
+        }
+    ]
+}

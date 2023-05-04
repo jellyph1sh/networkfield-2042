@@ -18,6 +18,7 @@ import "./styles/pages/genericPage.css";
 
 //import data
 import { playerData } from "./data/playerObject.js";
+import Map from "./components/Map";
 
 const playerTest = playerData;
 playerTest.name = "playerTest";
@@ -149,10 +150,13 @@ const App = () => {
         <WindowManager
           width={`700px`}
           height={`500px`}
-          windowName={"Map"}
+          windowName={"window test"}
           top={"200px"}
           left={"400px"}
           urlIcon={"https://img.icons8.com/fluency/256/internet.png"}
+          children={
+            <Map width={250} height={250}></Map>
+          }
         ></WindowManager>
       </TaskBarre>
     </div>
