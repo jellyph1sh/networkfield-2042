@@ -6,6 +6,7 @@ import WindowManager from "./components/WindowManager.js";
 import Shop from "./components/Shop.js";
 import TaskBarre from "./components/TaskBarre.js";
 import Window from "./components/Window.js";
+import Generic from "./components/Generic.js";
 
 //import styles
 import "./styles/components/window.css";
@@ -13,6 +14,7 @@ import "./styles/pages/mainPage.css";
 import "./styles/components/Shop.css";
 import "./styles/components/taskBarre.css";
 import "./styles/components/mission.css";
+import "./styles/pages/genericPage.css";
 
 //import data
 import { playerData } from "./data/playerObject.js";
@@ -34,19 +36,26 @@ const App = () => {
       height: `${"500px"}`,
     },
   });
+  const [lorePassed, setLorePassed] = useState(false);
+  const [gameStart, setGameStart] = useState(false);
 
   let hackPlayerMission = (
     <Window
       width={styleWindowHack.current.index.width}
       height={styleWindowHack.current.index.height}
-      windowName={"hackPlayerWindow"}
+      windowName={"you are being hacked !!"}
       setShowWindow={setShowHackingWindow}
       styleWindow={styleWindowHack}
       children={
         <Mission
+          malus={true}
           isTimer={true}
           difficulty={playerData.currentLevel}
           setShowWindow={setShowHackingWindow}
+          winMessage="Congrats you blocked the attack"
+          looseMessage={"The hacker stole you some money"}
+          setPlayerData={setPlayerData}
+          playerData={playerData}
         ></Mission>
       }
       canCloseWindow={false}
@@ -61,14 +70,19 @@ const App = () => {
         <Window
           width={styleWindowHack.current.index.width}
           height={styleWindowHack.current.index.height}
-          windowName={"hackPlayerWindow"}
+          windowName={"you are being hacked !!"}
           setShowWindow={setShowHackingWindow}
           styleWindow={styleWindowHack}
           children={
             <Mission
+              malus={true}
               isTimer={true}
               difficulty={playerData.currentLevel}
               setShowWindow={setShowHackingWindow}
+              winMessage="Congrats you blocked the attack"
+              looseMessage={"The hacker stole you some money ฿"}
+              setPlayerData={setPlayerData}
+              playerData={playerData}
             ></Mission>
           }
           canCloseWindow={false}
@@ -78,8 +92,38 @@ const App = () => {
     }
   }, [playerData]);
 
+  if (!gameStart) {
+    return (
+      <div id="main-start-container">
+        <h1>NetworkField 2042</h1>
+        <button id="button-start-game" onClick={() => setGameStart(true)}>
+          Start
+        </button>
+      </div>
+    );
+  }
+
+  if (!lorePassed) {
+    return (
+      <div
+        id="generic-container"
+        onContextMenu={(event) => event.preventDefault()}
+      >
+        <Generic />
+        <button
+          id="button-skip-lore"
+          onClick={() => {
+            setLorePassed(true);
+          }}
+        >
+          Play
+        </button>
+      </div>
+    );
+  }
+
   return (
-    <div id="main-container">
+    <div id="main-container" onContextMenu={(event) => event.preventDefault()}>
       <div id="background-container"></div>
       {showHackingWindow ? hackPlayerMission : null}
       {/* <button
@@ -87,16 +131,15 @@ const App = () => {
           console.log(playerData.money);
           setPlayerData((playerData) => ({
             ...playerData,
-            ...{ money: playerData.money + 1 },
+            ...{ money: playerData.money + 1.0 },
           }));
-          console.log(playerData.money);
         }}
       ></button> */}
       <TaskBarre>
         <WindowManager
           width={`700px`}
           height={`500px`}
-          windowName={"window test"}
+          windowName={"Shop"}
           top={"200px"}
           left={"400px"}
           urlIcon={"https://cdn-icons-png.flaticon.com/512/894/894117.png"}
@@ -105,11 +148,11 @@ const App = () => {
           }
         ></WindowManager>
         <WindowManager
-          width={`95%`}
-          height={`90%`}
+          width={`700px`}
+          height={`500px`}
           windowName={"window test"}
-          top={"5%"}
-          left={"5%"}
+          top={"200px"}
+          left={"400px"}
           urlIcon={"https://img.icons8.com/fluency/256/internet.png"}
           children={
             <Map width={250} height={250}></Map>
