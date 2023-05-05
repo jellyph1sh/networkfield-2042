@@ -20,7 +20,7 @@ body{
 
 #background-container{
   grid-row: 1;
-  background-image: url("./background-networkfieldjpg.jpg");
+  background-image: url("./hacker-background.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 35%;
