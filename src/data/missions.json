@@ -14,6 +14,104 @@
             "inputType":"text",
             "looseMessage":"You looooose !!!",
             "winMessage":"You wiiiiiin !!!"
+        },
+        "London":{
+            "offset": -15,
+            "name": "London",
+            "coordinates": [-0.50, 52.00],
+            "zone": "Europa",
+            "isAvailable": true
+        },
+        "Berlin":{
+            "offset": -15,
+            "name": "Berlin",
+            "coordinates": [13.00, 53.00],
+            "zone": "Europa",
+            "isAvailable": true
+        },
+        "Saint Petersbourg":{
+            "offset": -15,
+            "name": "Saint Petersbourg",
+            "coordinates": [30.00, 60.00],
+            "zone": "Europa",
+            "isAvailable": true
+        },
+        "Warsaw":{
+            "offset": -15,
+            "name": "Warsaw",
+            "coordinates": [21.00, 52.00],
+            "zone": "Europa",
+            "isAvailable": true
+        },
+        "Washington":{
+            "offset": -15,
+            "name": "Washington",
+            "coordinates": [-77.00, 38.00],
+            "zone": "NorthAmerica",
+            "isAvailable": true
+        },
+        "Los Angeles":{
+            "offset": -15,
+            "name": "Los Angeles",
+            "coordinates": [-117.50, 34.00],
+            "zone": "NorthAmerica",
+            "isAvailable": true
+        },
+        "Torronto":{
+            "offset": -15,
+            "name": "Torronto",
+            "coordinates": [-80.00, 44.00],
+            "zone": "NorthAmerica",
+            "isAvailable": true
+        },
+        "Havana":{
+            "offset": -15,
+            "name": "Havana",
+            "coordinates": [-82.00, 23.00],
+            "zone": "NorthAmerica",
+            "isAvailable": true
+        },
+        "Mexico City":{
+            "offset": -15,
+            "name": "Mexico City",
+            "coordinates": [-99.00, 19.00],
+            "zone": "NorthAmerica",
+            "isAvailable": true
+        },
+        "Mumbai":{
+            "offset": -15,
+            "name": "Mumbai",
+            "coordinates": [73.50, 19.00],
+            "zone": "Asia",
+            "isAvailable": true
+        },
+        "Beijing":{
+            "offset": -15,
+            "name": "Beijing",
+            "coordinates": [118.00, 39.00],
+            "zone": "Asia",
+            "isAvailable": true
+        },
+        "Pyongyang":{
+            "offset": -15,
+            "name": "Pyongyang",
+            "coordinates": [125.00, 39.00],
+            "zone": "Asia",
+            "isAvailable": true
+        },
+        "Kabul":{
+            "offset": -15,
+            "name": "Kabul",
+            "coordinates": [69.00, 34.00],
+            "zone": "Asia",
+            "isAvailable": true
+        },
+        "Vladivostok":{
+            "offset": -15,
+            "name": "Vladivostok",
+            "coordinates": [134.00, 43.00],
+            "zone": "Asia",
+            "isAvailable": true
         }
     }
 }
