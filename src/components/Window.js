@@ -11,7 +11,6 @@ const Window = ({
   styleWindow,
   canCloseWindow = true,
 }) => {
-  const styleHeader = useRef({ style: styleWindow.defaultHeader });
   let moveInX, moveInY;
   const move = (event) => {
     const element = document.getElementById(windowName);
@@ -26,7 +25,6 @@ const Window = ({
   };
 
   const dragging = (event) => {
-    styleHeader.current.style = styleWindow.current.pressHeader;
     const element = event.target;
     moveInX = event.clientX - element.getBoundingClientRect().left;
     moveInY = event.clientY - element.getBoundingClientRect().top;
@@ -34,7 +32,6 @@ const Window = ({
   };
 
   const freeze = (event) => {
-    styleHeader.current.style = styleWindow.current.defaultHeader;
     const element = event.target;
     element.removeEventListener("mousemove", move);
   };
@@ -45,11 +42,11 @@ const Window = ({
         className="header-window"
         onPointerDown={dragging}
         onPointerUp={freeze}
-        style={styleWindow.current.styleHeader}
       >
         <h3>{windowName}</h3>
         {canCloseWindow ? (
           <button
+            id="close-window-button"
             onClick={() => {
               playSoundEffect(soundCloseWindow);
               setShowWindow(false);
