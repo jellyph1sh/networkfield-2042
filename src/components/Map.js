@@ -90,11 +90,12 @@ const Map = ({
             key={marker.name}
             coordinates={marker.coordinates}
             onClick={() => {
-              console.log("HACKING!");
               // while (document.getElementById("close-window-button") != null) {
               document.getElementById("close-window-button").click();
               setTimeout(() => {
-                document.getElementById("close-window-button").click();
+                if (document.getElementById("close-window-button") != null) {
+                  document.getElementById("close-window-button").click();
+                }
               }, 100);
               // }
               generateMission(
