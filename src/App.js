@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 
-//import compenents
+//import components
 import Mission from "./components/Mission";
 import WindowManager from "./components/WindowManager.js";
 import Shop from "./components/Shop.js";
 import TaskBarre from "./components/TaskBarre.js";
 import Window from "./components/Window.js";
 import Generic from "./components/Generic.js";
+import Map from "./components/Map";
 
 //import styles
 import "./styles/components/window.css";
@@ -18,7 +19,9 @@ import "./styles/pages/genericPage.css";
 
 //import data
 import { playerData } from "./data/playerObject.js";
-import Map from "./components/Map";
+
+//import utils
+import createLocalStorage from "./utils/createLocalStorage.js";
 
 const playerTest = playerData;
 playerTest.name = "playerTest";
@@ -27,6 +30,8 @@ playerTest.money = 0.9;
 const App = () => {
   const moneyStage = useRef({ stage: 1 });
   const [playerData, setPlayerData] = useState(playerTest);
+  const [missionSelected, setMissionSelected] = useState();
+  const [showMissionSelected, setShowMissionSelected] = useState(false);
   const [showHackingWindow, setShowHackingWindow] = useState(false);
   const styleWindowHack = useRef({
     index: {
@@ -96,7 +101,13 @@ const App = () => {
     return (
       <div id="main-start-container">
         <h1>NetworkField 2042</h1>
-        <button id="button-start-game" onClick={() => setGameStart(true)}>
+        <button
+          id="button-start-game"
+          onClick={() => {
+            setGameStart(true);
+            createLocalStorage();
+          }}
+        >
           Start
         </button>
       </div>
@@ -135,6 +146,7 @@ const App = () => {
           }));
         }}
       ></button> */}
+      {showMissionSelected ? missionSelected : null}
       <TaskBarre>
         <WindowManager
           width={`700px`}
@@ -155,7 +167,15 @@ const App = () => {
           left={"400px"}
           urlIcon={"https://img.icons8.com/fluency/256/internet.png"}
           children={
-            <Map width={250} height={250}></Map>
+            <Map
+              width={250}
+              height={250}
+              setMissionSelected={setMissionSelected}
+              setShowMissionSelected={setShowMissionSelected}
+              styleWindow={styleWindowHack}
+              setPlayerData={setPlayerData}
+              playerData={playerData}
+            ></Map>
           }
         ></WindowManager>
       </TaskBarre>

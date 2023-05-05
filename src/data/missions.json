@@ -1,11 +1,19 @@
 {
-    "missions": [
-        {
+    "missions": {
+        "Paris":{
             "offset": -15,
             "name": "Paris",
             "coordinates": [2.00, 48.00],
             "zone": "Europa",
-            "isAvailable": true
+            "isAvailable": true,
+            "malus":false,
+            "difficulty":1,
+            "nbWords":10,
+            "isTimer":false,
+            "timer":30,
+            "inputType":"text",
+            "looseMessage":"You looooose !!!",
+            "winMessage":"You wiiiiiin !!!"
         }
-    ]
+    }
 }
