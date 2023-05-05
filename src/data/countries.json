@@ -2,7 +2,7 @@
     "continents": [
         {
             "name": "Europa",
-            "names": ["Belgium", "France", "Germany", "Luxembourg", "Poland", "Russia", "United Kingdom"],
+            "names": ["France", "Germany", "Poland", "Russia", "United Kingdom"],
             "coords": [10.00, 50.00],
             "scale": 500
         },
@@ -14,7 +14,7 @@
         },
         {
             "name": "Asia",
-            "names": ["Afghanistan", "China", "India", "Japan", "Kazakhstan", "North Korea", "Russia", "South Korea"],
+            "names": ["Afghanistan", "China", "India", "North Korea", "Russia"],
             "coords": [90, 30],
             "scale": 250
         }
