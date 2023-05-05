@@ -35,9 +35,9 @@ const App = () => {
   const [showHackingWindow, setShowHackingWindow] = useState(false);
   const styleWindowHack = useRef({
     index: {
-      left: `${"400px"}`,
+      left: `${"500px"}`,
       top: `${"100px"}`,
-      width: `${"400px"}`,
+      width: `${"600px"}`,
       height: `${"500px"}`,
     },
   });
@@ -152,8 +152,8 @@ const App = () => {
           width={`700px`}
           height={`500px`}
           windowName={"Shop"}
-          top={"200px"}
-          left={"400px"}
+          top={"30px"}
+          left={"30px"}
           urlIcon={"https://cdn-icons-png.flaticon.com/512/894/894117.png"}
           children={
             <Shop playerData={playerData} setPlayerData={setPlayerData}></Shop>
@@ -162,9 +162,9 @@ const App = () => {
         <WindowManager
           width={`700px`}
           height={`500px`}
-          windowName={"window test"}
-          top={"200px"}
-          left={"400px"}
+          windowName={"Map"}
+          top={"100px"}
+          left={"500px"}
           urlIcon={"https://img.icons8.com/fluency/256/internet.png"}
           children={
             <Map
