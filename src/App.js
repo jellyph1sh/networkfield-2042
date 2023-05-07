@@ -67,6 +67,17 @@ const App = () => {
     ></Window>
   );
 
+  const handlerOnKeyDown = (e) => {
+    if (e.key == "Tab") {
+      e.preventDefault();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", handlerOnKeyDown);
+    return () => document.removeEventListener("keydown", handlerOnKeyDown);
+  }, []);
+
   useEffect(() => {
     if (playerData.money >= moneyStage.current.stage) {
       moneyStage.current.stage = moneyStage.current.stage * 10;
