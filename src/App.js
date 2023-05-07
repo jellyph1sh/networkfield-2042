@@ -22,6 +22,9 @@ import { playerData } from "./data/playerObject.js";
 
 //import utils
 import createLocalStorage from "./utils/createLocalStorage.js";
+import playSoundEffect from "./utils/playSoundEffect.js";
+
+//import sound
 
 const playerTest = playerData;
 playerTest.name = "playerTest";
@@ -148,7 +151,7 @@ const App = () => {
     <div id="main-container" onContextMenu={(event) => event.preventDefault()}>
       <div id="background-container"></div>
       {showHackingWindow ? hackPlayerMission : null}
-      {/* <button
+      <button
         onClick={() => {
           console.log(playerData.money);
           setPlayerData((playerData) => ({
@@ -156,7 +159,7 @@ const App = () => {
             ...{ money: playerData.money + 1.0 },
           }));
         }}
-      ></button> */}
+      ></button>
       {showMissionSelected ? missionSelected : null}
       <TaskBarre>
         <WindowManager

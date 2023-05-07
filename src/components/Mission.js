@@ -1,6 +1,10 @@
 import React, { useRef, useState } from "react";
 import { getWords } from "../data/wordsMission.js";
 import ProgressBar from "./ProgressBar.js";
+import playSoundEffect from "../utils/playSoundEffect.js";
+import wrongTry from "../sound/wrong.mp3";
+import goodTrySoundEffect from "../sound/winTrySound.wav";
+import clickOnButton from "../sound/mouse-click1.mp3";
 
 const Mission = ({
   difficulty = 1,
@@ -23,7 +27,6 @@ const Mission = ({
   const [errorMessage, setErrorMessage] = useState(null);
   const [isFinish, setFinish] = useState(false);
   const allTry = useRef({ trials: [] });
-  // console.log("test reload hack window");
   const inputWord = (
     <input
       ref={inputRef}
@@ -84,6 +87,7 @@ const Mission = ({
     setErrorMessage(null);
     console.log(checkIsWord(e.target.enterWord.value, getWord));
     if (checkIsWord(e.target.enterWord.value, getWord)) {
+      playSoundEffect(goodTrySoundEffect);
       allTry.current.trials.push("$ " + e.target.enterWord.value);
       if (index.current === words.current.length - 1) {
         setFinish(true);
@@ -91,6 +95,7 @@ const Mission = ({
       index.current = index.current + 1;
       setWord(words.current[index.current]);
     } else {
+      playSoundEffect(wrongTry);
       allTry.current.trials.push("$ Error : Invalid command");
       setErrorMessage(<p id="error-message">Wrong command!</p>);
     }
@@ -110,6 +115,7 @@ const Mission = ({
         <h3 id="endMessage">{winMessage}</h3>
         <button
           onClick={() => {
+            playSoundEffect(clickOnButton);
             setShowWindow(false);
           }}
           autoFocus
@@ -128,6 +134,7 @@ const Mission = ({
         <h3 id="endMessage">{looseMessage}</h3>
         <button
           onClick={() => {
+            playSoundEffect(clickOnButton);
             setShowWindow(false);
           }}
           autoFocus
