@@ -42,7 +42,11 @@ const Window = ({
   };
 
   return (
-    <div style={styleWindow.current.index} id={windowName} className="window">
+    <div
+      style={styleWindow.current.index}
+      id={windowName}
+      className="window"
+    >
       <div
         className="header-window"
         onPointerDown={dragging}
