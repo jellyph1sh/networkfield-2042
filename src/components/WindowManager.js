@@ -41,8 +41,8 @@ const WindowManager = ({
   const element = showWindow ? (
     <div>
       <Window
-        // width={width}
-        // height={height}
+        width={width}
+        height={height}
         windowName={windowName}
         top={top}
         left={left}
