@@ -17,7 +17,7 @@ const Generic = () => {
     if (!loreComplete.current.index) {
       setTimeout(() => {
         setCurrentLore((c) => c + allLore.current.index[c.length]);
-      }, 76);
+      }, 70);
       if (currentLore[currentLore.length - 1] != " ") {
         playSoundEffect(oneLetterTyping);
       }

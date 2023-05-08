@@ -55,3 +55,19 @@ h1{
     text-align: center;
     margin-top: 5rem;
 }
+
+#total-bar-generic{
+    height: 2rem;
+    width: 20rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(50, 50, 50);
+    border: rgb(100, 100, 100);
+}
+
+#current-progress-bar-generic{
+    height: 100%;
+    background-color: green;
+}

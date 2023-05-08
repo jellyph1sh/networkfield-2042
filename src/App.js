@@ -22,6 +22,11 @@ import { playerData } from "./data/playerObject.js";
 
 //import utils
 import createLocalStorage from "./utils/createLocalStorage.js";
+import playSoundEffect from "./utils/playSoundEffect.js";
+import showChargingBar from "./utils/showChargingBar.js";
+
+//import sound
+import chargingBarSound from "./sound/charging-bar-sound.mp3";
 
 const playerTest = playerData;
 playerTest.name = "playerTest";
@@ -115,8 +120,14 @@ const App = () => {
         <button
           id="button-start-game"
           onClick={() => {
-            setGameStart(true);
-            createLocalStorage();
+            playSoundEffect(chargingBarSound);
+            showChargingBar();
+            setTimeout(() => {
+              setGameStart(true);
+              createLocalStorage();
+              document.getElementById("button-start-game").hidden = false;
+              document.getElementById("total-bar-generic").hidden = true;
+            }, 4000);
           }}
         >
           Start

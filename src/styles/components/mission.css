@@ -83,21 +83,22 @@
     color: green;
     display: flex;
     flex-direction: column;
-    padding-top: 25%;
     text-align: center;
     gap: 2rem;
 }
 
 #mission-container-finished button{
-    background-color: rgb(200, 200, 200);
+    background-color: rgb(50, 50, 50);
     border-color: rgb(13, 13,13);
-    color: rgb(13, 13,13);
+    color: rgb(200, 200, 200);
+    text-shadow: 0 0 18px rgb(13,13,13);
     width: fit-content;
     padding-inline: 0.5rem;
     align-self: center;
     outline: none;
     font-weight: 700;
     cursor: pointer;
+    border-radius: 5px
 }
 
 .loose-text{
