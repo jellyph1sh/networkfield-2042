@@ -8,6 +8,7 @@ import TaskBarre from "./components/TaskBarre.js";
 import Window from "./components/Window.js";
 import Generic from "./components/Generic.js";
 import Map from "./components/Map";
+import End from "./components/End";
 
 //import styles
 import "./styles/components/window.css";
@@ -16,6 +17,7 @@ import "./styles/components/Shop.css";
 import "./styles/components/taskBarre.css";
 import "./styles/components/mission.css";
 import "./styles/pages/genericPage.css";
+import "./styles/pages/endPage.css";
 
 //import data
 import { playerData } from "./data/playerObject.js";
@@ -48,6 +50,7 @@ const App = () => {
   });
   const [lorePassed, setLorePassed] = useState(false);
   const [gameStart, setGameStart] = useState(false);
+  const [gameFinished, setGameFinished] = useState(false);
 
   let hackPlayerMission = (
     <Window
@@ -113,6 +116,14 @@ const App = () => {
     }
   }, [playerData]);
 
+  if (gameFinished) {
+    return (
+      <div id="main-end-container">
+        <End />
+      </div>
+    );
+  }
+
   if (!gameStart) {
     return (
       <div id="main-start-container">
@@ -168,6 +179,7 @@ const App = () => {
           }));
         }}
       ></button> */}
+      {/* <button onClick={() => setGameFinished(true)}></button> */}
       {showMissionSelected ? missionSelected : null}
       <TaskBarre>
         <WindowManager

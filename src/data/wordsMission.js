@@ -103,10 +103,6 @@ const WordsLevel = {
     "net user donald_trunk v44=GZ9qiS)}5m /delete",
     "net user vladimir_mouline iP@fkL7aX#99}4 /delete",
   ],
-  lvl4: [
-    "netsh int ip set address 'admin' address=192.168.1.10 mask=255.255.255.0 gateway=192.168.1.1",
-    "netsh interface ipv4 set address name='nomdelinterface' static IP netmask passerelle",
-  ],
 };
 
 export const getWords = (level, nbWords) => {
