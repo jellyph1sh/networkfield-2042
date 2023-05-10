@@ -1,31 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const End = () => {
-  const totalMessageEnd = "Congratulation you save the world !!!";
   const [currentMessageEnd, setcurrentMessageEnd] = useState("");
-  let currentIndex = 0;
-  useEffect(
-    () => {
-      if (totalMessageEnd.length > currentMessageEnd.length)
-        setTimeout(() => {
-          currentIndex++;
-          setcurrentMessageEnd((s) => s + totalMessageEnd[currentIndex]);
-        }, 30);
-    },
-    { totalMessageEnd }
-  );
+  const totalMessageEnd = useRef("Congratulation you save the world !!!");
+  useEffect(() => {
+    if (totalMessageEnd.current.length > currentMessageEnd.length)
+      setTimeout(() => {
+        setcurrentMessageEnd((s) => s + totalMessageEnd.current[s.length]);
+      }, 30);
+  }, [currentMessageEnd]);
 
   return (
-    <div>
+    <div id="end-container">
       <div>
-        <h1>Congratulation you save the world !!!</h1>
+        <h1>{currentMessageEnd}</h1>
       </div>
-      <div id="info-container">
-        <p>{currentMessageEnd}</p>
-      </div>
-      <div>
-        <button onClick={() => window.location.reload()}>Reset ?</button>
-      </div>
+      <button onClick={() => window.location.reload()} id="button-retry">
+        Retry ?
+      </button>
     </div>
   );
 };

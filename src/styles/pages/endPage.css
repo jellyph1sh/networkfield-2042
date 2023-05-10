@@ -1,0 +1,29 @@
+#main-end-container{
+    height: 100vh;
+}
+
+
+#end-container{
+    display: flex;
+    flex-direction: column;
+    gap: 25rem;
+    height: 100%;
+}
+
+#button-retry{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    outline: none;
+    width: 7rem;
+    height: 4rem;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    text-shadow: 0 0 5px rgb(0, 215, 0);
+    box-shadow: 0 0 5px rgb(0, 215, 0);
+    border: 3px solid green;
+    background-color: black;
+    font-size: 1.2em;
+}

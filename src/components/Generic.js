@@ -1,22 +1,17 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import playSoundEffect from "../utils/playSoundEffect.js";
 import oneLetterTyping from "../sound/typing_one_letter.mp3";
 
 const Generic = () => {
   const [currentLore, setCurrentLore] = useState("");
-  const loreComplete = useRef({ index: false });
-  const allLore = useRef({
-    index:
-      "The year 2042 is over. The Internet is no longer the free space it used to be. Powerful multinational bodies scan and spy on every corner of the network. People's privacy is being combed through by millions of bots every moment. You will embody the hacker who will restore the Internet to its former freedom by hacking into the various authorities around the world that are plaguing the Internet.",
-  });
+  const allLore = useRef(
+    "The year 2042 is over. The Internet is no longer the free space it used to be. Powerful multinational bodies scan and spy on every corner of the network. People's privacy is being combed through by millions of bots every moment. You will embody the hacker who will restore the Internet to its former freedom by hacking into the various authorities around the world that are plaguing the Internet."
+  );
 
-  React.useEffect(() => {
-    if (currentLore.length == allLore.current.index.length) {
-      loreComplete.current.index = true;
-    }
-    if (!loreComplete.current.index) {
+  useEffect(() => {
+    if (currentLore.length != allLore.current.length) {
       setTimeout(() => {
-        setCurrentLore((c) => c + allLore.current.index[c.length]);
+        setCurrentLore((c) => c + allLore.current[c.length]);
       }, 70);
       if (currentLore[currentLore.length - 1] != " ") {
         playSoundEffect(oneLetterTyping);
