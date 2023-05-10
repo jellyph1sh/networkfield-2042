@@ -34,6 +34,8 @@ const generateMission = (
           playerData={playerData}
           setPlayerData={setPlayerData}
           setShowWindow={setShowMissionSelected}
+          reward={dataMission["reward"]}
+          nextStage={dataMission["nextStage"]}
         />
       }
     />

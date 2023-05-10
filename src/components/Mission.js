@@ -18,6 +18,8 @@ const Mission = ({
   playerData,
   winMessage,
   looseMessage,
+  reward,
+  nextStage,
 }) => {
   const words = useRef(getWords(difficulty, nbWords));
   const inputRef = useRef(null);
@@ -109,6 +111,10 @@ const Mission = ({
   };
 
   if (isFinish) {
+    setPlayerData((playerData) => ({
+      ...playerData,
+      money: playerData.money + reward,
+    }));
     return (
       <div id="mission-container-finished">
         <h1> DONE!</h1>
