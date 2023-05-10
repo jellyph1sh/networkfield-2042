@@ -12,6 +12,12 @@ export const playerData = {
       maxLevel: 7,
       price: 1.4,
     },
+    wifi: {
+      name: "wifi",
+      currentLevel: 1,
+      maxLevel: 15,
+      price: 1.1,
+    },
   },
   name: "",
   money: 0,
