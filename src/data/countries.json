@@ -4,19 +4,22 @@
             "name": "Europa",
             "names": ["France", "Germany", "Poland", "Russia", "United Kingdom"],
             "coords": [10.00, 50.00],
-            "scale": 500
+            "scale": 500,
+            "isAvailable": true
         },
         {
             "name": "NorthAmerica",
             "names": ["Canada", "Cuba", "Mexico", "United States of America"],
             "coords": [-90, 40],
-            "scale": 250
+            "scale": 250,
+            "isAvailable": false
         },
         {
             "name": "Asia",
-            "names": ["Afghanistan", "China", "India", "North Korea", "Russia"],
+            "names": ["Afghanistan", "China", "India", "North Korea"],
             "coords": [90, 30],
-            "scale": 250
+            "scale": 250,
+            "isAvailable": false
         }
     ]
 }
