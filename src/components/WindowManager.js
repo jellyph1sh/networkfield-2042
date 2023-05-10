@@ -24,7 +24,6 @@ const WindowManager = ({
       <div
         onClick={() => {
           setShowWindow(() => {
-            console.log(showWindow);
             if (showWindow) {
               return false;
             }

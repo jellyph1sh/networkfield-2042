@@ -3,6 +3,7 @@ import ProgressBar from "./ProgressBar.js";
 import playSoundEffect from "../utils/playSoundEffect.js";
 import buySoundEffect from "../sound/cash-register-fake-88639.mp3";
 import maxLevelButtonSound from "../sound/button-inactive.mp3";
+import unlockPrimaryMission from "../utils/unlockPrimaryMission";
 
 const Shop = ({ playerData, setPlayerData }) => {
   const [playerMoney, setPlayerMoney] = useState(playerData.money);
@@ -20,6 +21,7 @@ const Shop = ({ playerData, setPlayerData }) => {
       }));
       stat.currentLevel++;
       setPlayerMoney(playerData.money);
+      unlockPrimaryMission(playerData);
     } else {
       setClassErrorMessage("showError");
       setTimeout(() => {

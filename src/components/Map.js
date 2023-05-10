@@ -17,6 +17,7 @@ const Map = ({
   styleWindow,
   setPlayerData,
   playerData,
+  setGameFinished,
 }) => {
   const [isZoom, defZoom] = useState(false);
   const [getScale, setScale] = useState(100);
@@ -25,6 +26,7 @@ const Map = ({
   const geoUrl =
     "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json";
 
+  const missions = JSON.parse(localStorage.getItem("data"));
   const selectGeography = (geography) => {
     let isIn = false;
     const storage = JSON.parse(localStorage.getItem("countries"));
@@ -94,21 +96,20 @@ const Map = ({
             key={marker.name}
             coordinates={marker.coordinates}
             onClick={() => {
-              // while (document.getElementById("close-window-button") != null) {
               document.getElementById("close-window-button").click();
               setTimeout(() => {
                 if (document.getElementById("close-window-button") != null) {
                   document.getElementById("close-window-button").click();
                 }
               }, 100);
-              // }
               generateMission(
                 marker.name,
                 setMissionSelected,
                 setShowMissionSelected,
                 styleWindow,
                 setPlayerData,
-                playerData
+                playerData,
+                setGameFinished
               );
             }}
           >

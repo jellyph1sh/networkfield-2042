@@ -5,6 +5,7 @@ import playSoundEffect from "../utils/playSoundEffect.js";
 import wrongTry from "../sound/wrong.mp3";
 import goodTrySoundEffect from "../sound/winTrySound.wav";
 import clickOnButton from "../sound/mouse-click1.mp3";
+import unlockContinent from "../utils/unlockContinent";
 
 const Mission = ({
   difficulty = 1,
@@ -20,6 +21,7 @@ const Mission = ({
   looseMessage,
   reward,
   nextStage,
+  setGameFinished,
 }) => {
   const words = useRef(getWords(difficulty, nbWords));
   const inputRef = useRef(null);
@@ -45,9 +47,6 @@ const Mission = ({
       timer = setTimeout(() => setCounter((c) => c - 1), 1000);
     } else {
       if (malus) {
-        console.log(
-          Math.round((playerData.money - playerData.money * 0.25) * 100) / 100
-        );
         malus = false;
         setPlayerData((playerData) => ({
           ...playerData,
@@ -55,7 +54,6 @@ const Mission = ({
             Math.round((playerData.money - playerData.money * 0.25) * 100) /
             100,
         }));
-        console.log(playerData.money);
       }
     }
     return () => {
@@ -87,7 +85,6 @@ const Mission = ({
   const checkWord = (e) => {
     e.preventDefault();
     setErrorMessage(null);
-    console.log(checkIsWord(e.target.enterWord.value, getWord));
     if (checkIsWord(e.target.enterWord.value, getWord)) {
       playSoundEffect(goodTrySoundEffect);
       allTry.current.trials.push("$ " + e.target.enterWord.value);
@@ -111,10 +108,14 @@ const Mission = ({
   };
 
   if (isFinish) {
-    setPlayerData((playerData) => ({
-      ...playerData,
-      money: playerData.money + reward,
-    }));
+    let setFinishGame = false;
+    if (nextStage != null) {
+      if (nextStage == "finished") {
+        setFinishGame = true;
+      } else {
+        unlockContinent(nextStage);
+      }
+    }
     return (
       <div id="mission-container-finished">
         <h1> DONE!</h1>
@@ -123,6 +124,13 @@ const Mission = ({
           onClick={() => {
             playSoundEffect(clickOnButton);
             setShowWindow(false);
+            if (setFinishGame) setGameFinished(true);
+            if (reward != null) {
+              setPlayerData((playerData) => ({
+                ...playerData,
+                money: Math.round((playerData.money + reward) * 100) / 100,
+              }));
+            }
           }}
           autoFocus
         >

@@ -20,7 +20,7 @@
                 "cpu":2,
                 "wifi":5
             },
-            "nextStage":"USA",
+            "nextStage":"NorthAmerica",
             "isPrimary":true
         },
         "London":{
@@ -78,7 +78,7 @@
             "zone": "NorthAmerica",
             "isAvailable": false,
             "difficulty":2,
-            "nbWords":10,
+            "nbWords":5,
             "isTimer":true,
             "timer":35,
             "inputType":"text",
@@ -148,7 +148,7 @@
             "zone": "Asia",
             "isAvailable": false,
             "difficulty":3,
-            "nbWords":7,
+            "nbWords":2,
             "isTimer":true,
             "timer":40,
             "inputType":"text",
