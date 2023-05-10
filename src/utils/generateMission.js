@@ -8,11 +8,11 @@ const generateMission = (
   setShowMissionSelected,
   styleWindow,
   setPlayerData,
-  playerData
+  playerData,
+  setGameFinished
 ) => {
   const data = JSON.parse(localStorage.getItem("data"));
   const dataMission = data["missions"][missionName];
-  console.log("test gen mission");
   setMissionSelected(
     <Window
       width={"400px"}
@@ -36,6 +36,7 @@ const generateMission = (
           setShowWindow={setShowMissionSelected}
           reward={dataMission["reward"]}
           nextStage={dataMission["nextStage"]}
+          setGameFinished={setGameFinished}
         />
       }
     />

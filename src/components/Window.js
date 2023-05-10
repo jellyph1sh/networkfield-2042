@@ -25,7 +25,6 @@ const Window = ({
   };
 
   const dragging = (event) => {
-    console.log("start moving");
     const element = event.target;
     moveInX = event.clientX - element.getBoundingClientRect().left;
     moveInY = event.clientY - element.getBoundingClientRect().top;
@@ -35,7 +34,6 @@ const Window = ({
   };
 
   const freeze = (event) => {
-    console.log("stop moving");
     document
       .getElementById("main-container")
       .removeEventListener("mousemove", move);

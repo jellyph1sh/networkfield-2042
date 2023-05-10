@@ -209,6 +209,7 @@ const App = () => {
               styleWindow={styleWindowHack}
               setPlayerData={setPlayerData}
               playerData={playerData}
+              setGameFinished={setGameFinished}
             ></Map>
           }
         ></WindowManager>
