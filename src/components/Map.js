@@ -27,7 +27,11 @@ const Map = ({
 
   const selectGeography = (geography) => {
     let isIn = false;
-    countries["continents"].map((continent) => {
+    const storage = JSON.parse(localStorage.getItem("countries"));
+    storage["continents"].map((continent) => {
+      if (!continent.isAvailable) {
+        return;
+      }
       continent["names"].map((country) => {
         if (country == geography.properties.name) {
           isIn = true;
@@ -40,7 +44,7 @@ const Map = ({
           key={geography.rsmKey}
           geography={geography}
           style={{
-            default: { fill: "#5a5a5a" },
+            default: { fill: "#8c1705" },
             hover: { fill: "#f92302" },
             pressed: { fill: "#8c1705" },
           }}
