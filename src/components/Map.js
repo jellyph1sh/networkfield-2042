@@ -6,7 +6,6 @@ import {
   Marker,
 } from "react-simple-maps";
 import countries from "../data/countries.json";
-import missions from "../data/missions.json";
 import generateMission from "../utils/generateMission.js";
 
 const Map = ({
@@ -91,6 +90,14 @@ const Map = ({
   const selectMarker = (marker) => {
     if (getZone === marker.zone) {
       if (marker.isAvailable) {
+        let color = "#FFF"
+        let strd = 1
+        let r = 4
+        if (marker.isPrimary) {
+          strd = 2
+          r = 6
+          color = "#f20e02"
+        }
         return (
           <Marker
             key={marker.name}
@@ -113,10 +120,10 @@ const Map = ({
               );
             }}
           >
-            <circle r={5} fill="#FFF" stroke="#fff" strokeWidth={2} />
+            <circle r={r} fill="#FFF" stroke={color} strokeWidth={strd} />
             <text
               textAnchor="middle"
-              y={marker.markerOffset}
+              y={marker.offset}
               style={{ fontFamily: "system-ui", fill: "#FFF" }}
             >
               {marker.name}
@@ -124,12 +131,20 @@ const Map = ({
           </Marker>
         );
       } else {
+        let color = "#FFF"
+        let strd = 1
+        let r = 4
+        if (marker.isPrimary) {
+          strd = 2
+          r = 6
+          color = "#2b2b2b"
+        }
         return (
           <Marker key={marker.name} coordinates={marker.coordinates}>
-            <circle r={5} fill="#FFF" stroke="#fff" strokeWidth={2} />
+            <circle r={r} fill="#FFF" stroke={color} strokeWidth={strd} />
             <text
               textAnchor="middle"
-              y={marker.markerOffset}
+              y={marker.offset}
               style={{ fontFamily: "system-ui", fill: "#FFF" }}
             >
               {marker.name}

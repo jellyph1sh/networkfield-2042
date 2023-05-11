@@ -194,8 +194,8 @@ const App = () => {
           }
         ></WindowManager>
         <WindowManager
-          width={`700px`}
-          height={`500px`}
+          width={`1600px`}
+          height={`900px`}
           windowName={"Map"}
           top={"100px"}
           left={"500px"}
@@ -203,7 +203,7 @@ const App = () => {
           children={
             <Map
               width={250}
-              height={250}
+              height={275}
               setMissionSelected={setMissionSelected}
               setShowMissionSelected={setShowMissionSelected}
               styleWindow={styleWindowHack}
