@@ -68,7 +68,7 @@ const WordsLevel = {
     "find 'private'",
     "md 'malware'",
     "copy mdp.txt",
-    "copy data.vsc",
+    "copy data.csv",
     "copy secretdata.csv",
     "ping localhost",
     "run malware.exe",
@@ -98,10 +98,10 @@ const WordsLevel = {
     "ls -lh /etc|grep ^d",
     "ls -lr /etc/ --group-directories-first",
     "chmod -c 777 /home/user/malware.exe",
-    "net user elon_kiosk 83}Uxa2iM^(6Rf /delete",
-    "net user jeff_pesos iG4y2*_wy:WG23 /delete",
-    "net user donald_trunk v44=GZ9qiS)}5m /delete",
-    "net user vladimir_mouline iP@fkL7aX#99}4 /delete",
+    "net user elon_kiosk usermdp /delete",
+    "net user jeff_pesos usermdp /delete",
+    "net user donald_trunk usermdp /delete",
+    "net user vladimir_mouline usermdp /delete",
   ],
 };
 
