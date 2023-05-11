@@ -1,7 +1,7 @@
 {
     "missions": {
         "BNP ParisHaut":{
-            "offset": -15,
+            "offset": 20,
             "name": "BNP ParisHaut",
             "coordinates": [2.00, 48.00],
             "zone": "Europa",
@@ -24,7 +24,7 @@
             "isPrimary":true
         },
         "London":{
-            "offset": -15,
+            "offset": -10,
             "name": "London",
             "coordinates": [-0.50, 52.00],
             "zone": "Europa",
@@ -32,7 +32,7 @@
             "reward":0.2
         },
         "Berlin":{
-            "offset": -15,
+            "offset": -10,
             "name": "Berlin",
             "coordinates": [13.00, 53.00],
             "zone": "Europa",
@@ -40,7 +40,7 @@
             "reward":0.2
         },
         "Saint Petersbourg":{
-            "offset": -15,
+            "offset": 20,
             "name": "Saint Petersbourg",
             "coordinates": [30.00, 60.00],
             "zone": "Europa",
@@ -48,7 +48,7 @@
             "reward":0.3
         },
         "Warsaw":{
-            "offset": -15,
+            "offset": 20,
             "name": "Warsaw",
             "coordinates": [21.00, 52.00],
             "zone": "Europa",
@@ -56,7 +56,7 @@
             "reward":0.1
         },
         "Washington":{
-            "offset": -15,
+            "offset": 20,
             "name": "Washington",
             "coordinates": [-77.00, 38.00],
             "zone": "NorthAmerica",
@@ -64,7 +64,7 @@
             "reward":0.3
         },
         "Los Angeles":{
-            "offset": -15,
+            "offset": -10,
             "name": "Los Angeles",
             "coordinates": [-117.50, 34.00],
             "zone": "NorthAmerica",
@@ -72,7 +72,7 @@
             "reward":0.2
         },
         "Pineapple":{
-            "offset": -15,
+            "offset": -10,
             "name": "Pineapple",
             "coordinates": [-80.00, 44.00],
             "zone": "NorthAmerica",
@@ -94,7 +94,7 @@
             "isPrimary":true
         },
         "Havana":{
-            "offset": -15,
+            "offset": -10,
             "name": "Havana",
             "coordinates": [-82.00, 23.00],
             "zone": "NorthAmerica",
@@ -102,7 +102,7 @@
             "reward":0.2
         },
         "Mexico City":{
-            "offset": -15,
+            "offset": -10,
             "name": "Mexico City",
             "coordinates": [-99.00, 19.00],
             "zone": "NorthAmerica",
@@ -110,23 +110,23 @@
             "reward":0.2
         },
         "Mumbai":{
-            "offset": -15,
+            "offset": -10,
             "name": "Mumbai",
             "coordinates": [73.50, 19.00],
             "zone": "Asia",
             "isAvailable": true,
             "reward":0.2
         },
-        "Beijing":{
-            "offset": -15,
-            "name": "Beijing",
-            "coordinates": [118.00, 39.00],
+        "Hong Kong":{
+            "offset": -10,
+            "name": "Hong Kong",
+            "coordinates": [115.00, 23.00],
             "zone": "Asia",
             "isAvailable": true,
             "reward":0.2
         },
         "Pyongyang":{
-            "offset": -15,
+            "offset": 20,
             "name": "Pyongyang",
             "coordinates": [125.00, 39.00],
             "zone": "Asia",
@@ -134,7 +134,7 @@
             "reward":0.3
         },
         "Kabul":{
-            "offset": -15,
+            "offset": -10,
             "name": "Kabul",
             "coordinates": [69.00, 34.00],
             "zone": "Asia",
@@ -142,7 +142,7 @@
             "reward":0.2
         },
         "Tok tik":{
-            "offset": -15,
+            "offset": -10,
             "name": "Tok tik",
             "coordinates": [134.00, 43.00],
             "zone": "Asia",
