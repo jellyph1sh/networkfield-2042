@@ -6,6 +6,7 @@ import wrongTry from "../sound/wrong.mp3";
 import goodTrySoundEffect from "../sound/winTrySound.wav";
 import clickOnButton from "../sound/mouse-click1.mp3";
 import unlockContinent from "../utils/unlockContinent";
+import looseMissionSound from "../sound/looseMission.mp3";
 
 const Mission = ({
   difficulty = 1,
@@ -141,6 +142,7 @@ const Mission = ({
   }
 
   if (isTimer === true && getCounter === 0 && !isFinish) {
+    playSoundEffect(looseMissionSound);
     return (
       <div id="mission-container-finished">
         <h1 className="loose-text">Time Over!</h1>

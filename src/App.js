@@ -205,8 +205,8 @@ const App = () => {
           }
         ></WindowManager>
         <WindowManager
-          width={`700px`}
-          height={`500px`}
+          width={`1000px`}
+          height={`600px`}
           windowName={"Map"}
           top={"100px"}
           left={"500px"}
