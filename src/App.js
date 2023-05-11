@@ -9,6 +9,7 @@ import Window from "./components/Window.js";
 import Generic from "./components/Generic.js";
 import Map from "./components/Map";
 import End from "./components/End";
+import InfoMainMission from "./components/InfoMainMission";
 
 //import styles
 import "./styles/components/window.css";
@@ -18,6 +19,7 @@ import "./styles/components/taskBarre.css";
 import "./styles/components/mission.css";
 import "./styles/pages/genericPage.css";
 import "./styles/pages/endPage.css";
+import "./styles/components/infosMainMission.css";
 
 //import data
 import { playerData } from "./data/playerObject.js";
@@ -88,7 +90,7 @@ const App = () => {
 
   useEffect(() => {
     if (playerData.money >= moneyStage.current.stage) {
-      moneyStage.current.stage = moneyStage.current.stage * 10;
+      moneyStage.current.stage = moneyStage.current.stage + 1;
       console.log(moneyStage);
       hackPlayerMission = (
         <Window
@@ -182,6 +184,15 @@ const App = () => {
       {/* <button onClick={() => setGameFinished(true)}></button> */}
       {showMissionSelected ? missionSelected : null}
       <TaskBarre>
+        <WindowManager
+          width={`350px`}
+          height={`550px`}
+          windowName={"Infos"}
+          top={"100px"}
+          left={"30px"}
+          urlIcon={"https://cdn-icons-png.flaticon.com/128/9195/9195785.png"}
+          children={<InfoMainMission />}
+        ></WindowManager>
         <WindowManager
           width={`700px`}
           height={`500px`}

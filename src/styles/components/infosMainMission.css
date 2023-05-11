@@ -1,0 +1,15 @@
+#main-infos-stats-mission{
+    width: 90%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+}
+
+#main-infos-stats-mission h3 {
+    margin: 0;
+}
+
+.info-stats-main-mission p{
+ margin-left: 7%;
+}

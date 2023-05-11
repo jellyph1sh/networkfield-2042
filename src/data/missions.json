@@ -18,7 +18,7 @@
             "requiredStats":{
                 "ram":3,
                 "cpu":2,
-                "wifi":5
+                "gpu":5
             },
             "nextStage":"NorthAmerica",
             "isPrimary":true
@@ -88,7 +88,7 @@
             "requiredStats":{
                 "ram":7,
                 "cpu":6,
-                "wifi":10
+                "gpu":10
             },
             "nextStage":"Asia",
             "isPrimary":true
@@ -150,7 +150,7 @@
             "difficulty":3,
             "nbWords":2,
             "isTimer":true,
-            "timer":40,
+            "timer":45,
             "inputType":"text",
             "looseMessage":"You failed !!!",
             "winMessage":"You just hacked Tok Tik !!!",
@@ -158,7 +158,7 @@
             "requiredStats":{
                 "ram":10,
                 "cpu":7,
-                "wifi":15
+                "gpu":15
             },
             "nextStage":"finished",
             "isPrimary":true

@@ -68,12 +68,12 @@ const WordsLevel = {
     "find 'private'",
     "md 'malware'",
     "copy mdp.txt",
-    "copy data.vsc",
+    "copy data.csv",
     "copy secretdata.csv",
     "ping localhost",
     "run malware.exe",
     "run script.sh",
-    "shutdown lochalhost",
+    "shutdown localhost",
     "telnet google.com",
     "timeout /t 100",
     "tree \\",
@@ -98,10 +98,10 @@ const WordsLevel = {
     "ls -lh /etc|grep ^d",
     "ls -lr /etc/ --group-directories-first",
     "chmod -c 777 /home/user/malware.exe",
-    "net user elon_kiosk 83}Uxa2iM^(6Rf /delete",
-    "net user jeff_pesos iG4y2*_wy:WG23 /delete",
-    "net user donald_trunk v44=GZ9qiS)}5m /delete",
-    "net user vladimir_mouline iP@fkL7aX#99}4 /delete",
+    "net user elon_kiosk usermdp /delete",
+    "net user jeff_pesos usermdp /delete",
+    "net user donald_trunk usermdp /delete",
+    "net user vladimir_mouline usermdp /delete",
   ],
 };
 
@@ -110,7 +110,7 @@ export const getWords = (level, nbWords) => {
   if (words.length <= nbWords) {
     return words;
   }
-  const wordsIndex = getRandomIndex(nbWords);
+  const wordsIndex = getRandomIndex(nbWords, words.length - 1);
   const result = [];
   wordsIndex.forEach((i) => {
     result.push(words[i]);
@@ -118,10 +118,10 @@ export const getWords = (level, nbWords) => {
   return result;
 };
 
-const getRandomIndex = (nbIndex) => {
+const getRandomIndex = (nbIndex, nbChoice) => {
   const result = [];
   while (result.length < nbIndex) {
-    const index = Math.floor(Math.random() * nbIndex);
+    const index = Math.floor(Math.random() * nbChoice);
     if (!result.includes(index)) {
       result.push(index);
     }
