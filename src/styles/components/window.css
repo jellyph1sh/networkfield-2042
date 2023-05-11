@@ -32,12 +32,11 @@
     background-color: rgb(20, 20, 20);
   }
   
-  .header-window button{
-    grid-row: 1;
-    grid-column: 2;
-    height: 100%;
+  #close-window-button{
+    position: absolute;
+    height: 1.5rem;
     justify-self: end;
-    align-self: start;
+    align-self: end;
     border: none;
     background-color: rgb(13,13,13);
     cursor: pointer;

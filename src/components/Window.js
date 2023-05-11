@@ -51,6 +51,7 @@ const Window = ({
         onPointerUp={freeze}
       >
         <h3>{windowName}</h3>
+      </div>
         {canCloseWindow ? (
           <button
             id="close-window-button"
@@ -62,7 +63,6 @@ const Window = ({
             ❌
           </button>
         ) : null}
-      </div>
       <div id="child-container">{children}</div>
     </div>
   );
