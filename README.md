@@ -28,5 +28,6 @@ which he already has in an inventory section. Some mechanics are inspired by the
 ## HOW TO RUN:
 - Clone the repository in any folder you want.
 - In a terminal, go to the repository location.
+- Run the command: `npm i`
 - Run the command: `npm start`
 - Now you can access to the game with this [link](http://localhost:3000).
