@@ -120,6 +120,7 @@
             "coordinates": [73.50, 19.00],
             "zone": "Asia",
             "isAvailable": true,
+            "nbWords":3,
             "reward":0.2
         },
         "Hong Kong":{
@@ -129,6 +130,7 @@
             "coordinates": [115.00, 23.00],
             "zone": "Asia",
             "isAvailable": true,
+            "nbWords":4,
             "reward":0.2
         },
         "Pyongyang":{
@@ -138,6 +140,7 @@
             "coordinates": [125.00, 39.00],
             "zone": "Asia",
             "isAvailable": true,
+            "nbWords":4,
             "reward":0.3
         },
         "Kabul":{
@@ -147,6 +150,7 @@
             "coordinates": [69.00, 34.00],
             "zone": "Asia",
             "isAvailable": true,
+            "nbWords":4,
             "reward":0.2
         },
         "Tok tik":{
