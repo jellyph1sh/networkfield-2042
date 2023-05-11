@@ -102,6 +102,11 @@ const Map = ({
                   document.getElementById("close-window-button").click();
                 }
               }, 100);
+              setTimeout(() => {
+                if (document.getElementById("close-window-button") != null) {
+                  document.getElementById("close-window-button").click();
+                }
+              }, 100);
               generateMission(
                 marker.name,
                 setMissionSelected,

@@ -150,7 +150,7 @@
             "difficulty":3,
             "nbWords":2,
             "isTimer":true,
-            "timer":40,
+            "timer":45,
             "inputType":"text",
             "looseMessage":"You failed !!!",
             "winMessage":"You just hacked Tok Tik !!!",
