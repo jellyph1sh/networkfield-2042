@@ -73,7 +73,7 @@ const WordsLevel = {
     "ping localhost",
     "run malware.exe",
     "run script.sh",
-    "shutdown lochalhost",
+    "shutdown localhost",
     "telnet google.com",
     "timeout /t 100",
     "tree \\",
@@ -110,7 +110,7 @@ export const getWords = (level, nbWords) => {
   if (words.length <= nbWords) {
     return words;
   }
-  const wordsIndex = getRandomIndex(nbWords);
+  const wordsIndex = getRandomIndex(nbWords, words.length - 1);
   const result = [];
   wordsIndex.forEach((i) => {
     result.push(words[i]);
@@ -118,10 +118,10 @@ export const getWords = (level, nbWords) => {
   return result;
 };
 
-const getRandomIndex = (nbIndex) => {
+const getRandomIndex = (nbIndex, nbChoice) => {
   const result = [];
   while (result.length < nbIndex) {
-    const index = Math.floor(Math.random() * nbIndex);
+    const index = Math.floor(Math.random() * nbChoice);
     if (!result.includes(index)) {
       result.push(index);
     }
