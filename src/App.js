@@ -90,7 +90,7 @@ const App = () => {
 
   useEffect(() => {
     if (playerData.money >= moneyStage.current.stage) {
-      moneyStage.current.stage = moneyStage.current.stage * 10;
+      moneyStage.current.stage = moneyStage.current.stage + 1;
       console.log(moneyStage);
       hackPlayerMission = (
         <Window
