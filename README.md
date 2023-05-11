@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# NETWORKFIELD 2042
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## PLOT:
+The year 2042 is over. The Internet is no longer the free space it used to be. Powerful multinational bodies scan and spy on every corner of the network.
+People's privacy is being combed through by millions of bots every moment. You will embody the hacker,
+who will give the Internet back its freedom of yesteryear by hacking the various authorities around the world that plague the Internet.
 
-## Available Scripts
+## CONCEPT:
+The player will evolve in the hacker's environment with his computer interface. You will find in this interface
+a map of the world with the different targets that the player will attack.
+These are his missions, the missions will be available by sector with a main mission
+to unlock the next sector and so-called secondary missions to raise funds.
+The missions are composed of an interface with a sequence of words that must be completed one by one as quickly as possible.
+The funds will allow the player to invest in better equipment which he can buy in the shop interface as well as consult the equipment
+which he already has in an inventory section. Some mechanics are inspired by the game [s0urce.io](http://s0urce.io/).
 
-In the project directory, you can run:
+## TOOLS:
+    - GitHub
+    - Trello
+    - JS
+    - ReactJS
+    - HTML/CSS
 
-### `npm start`
+## MEMBERS:
+    - ferronevan (Ferron Evan)
+    - jellyph1sh (Sorgiati Sacha)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## HOW TO RUN:
+- Clone the repository in any folder you want.
+- In a terminal, go to the repository location.
+- Run the command: `npm start`
+- Now you can access to the game with this [link](http://localhost:3000).
