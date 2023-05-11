@@ -14,7 +14,7 @@
             "inputType":"text",
             "looseMessage":"You looooose !!!",
             "winMessage":"You just hacked BNP ParisHaut !!!",
-            "reward":0.5,
+            "reward":1,
             "requiredStats":{
                 "ram":3,
                 "cpu":2,
@@ -29,7 +29,7 @@
             "coordinates": [-0.50, 52.00],
             "zone": "Europa",
             "isAvailable": true,
-            "reward":0.2
+            "reward":0.1
         },
         "Berlin":{
             "offset": -15,
@@ -37,7 +37,7 @@
             "coordinates": [13.00, 53.00],
             "zone": "Europa",
             "isAvailable": true,
-            "reward":0.2
+            "reward":0.1
         },
         "Saint Petersbourg":{
             "offset": -15,
@@ -45,7 +45,7 @@
             "coordinates": [30.00, 60.00],
             "zone": "Europa",
             "isAvailable": true,
-            "reward":0.3
+            "reward":0.1
         },
         "Warsaw":{
             "offset": -15,
@@ -56,20 +56,22 @@
             "reward":0.1
         },
         "Washington":{
+            "difficulty":2,
             "offset": -15,
             "name": "Washington",
             "coordinates": [-77.00, 38.00],
             "zone": "NorthAmerica",
             "isAvailable": true,
-            "reward":0.3
+            "reward":0.1
         },
         "Los Angeles":{
+            "difficulty":2,
             "offset": -15,
             "name": "Los Angeles",
             "coordinates": [-117.50, 34.00],
             "zone": "NorthAmerica",
             "isAvailable": true,
-            "reward":0.2
+            "reward":0.1
         },
         "Pineapple":{
             "offset": -15,
@@ -84,7 +86,7 @@
             "inputType":"text",
             "looseMessage":"You failed !!!",
             "winMessage":"You just hacked Tim Cooked !!!",
-            "reward":1.5,
+            "reward":1,
             "requiredStats":{
                 "ram":7,
                 "cpu":6,
@@ -94,6 +96,7 @@
             "isPrimary":true
         },
         "Havana":{
+            "difficulty":2,
             "offset": -15,
             "name": "Havana",
             "coordinates": [-82.00, 23.00],
@@ -102,6 +105,7 @@
             "reward":0.2
         },
         "Mexico City":{
+            "difficulty":2,
             "offset": -15,
             "name": "Mexico City",
             "coordinates": [-99.00, 19.00],
@@ -110,6 +114,7 @@
             "reward":0.2
         },
         "Mumbai":{
+            "difficulty":3,
             "offset": -15,
             "name": "Mumbai",
             "coordinates": [73.50, 19.00],
@@ -118,6 +123,7 @@
             "reward":0.2
         },
         "Beijing":{
+            "difficulty":3,
             "offset": -15,
             "name": "Beijing",
             "coordinates": [118.00, 39.00],
@@ -126,6 +132,7 @@
             "reward":0.2
         },
         "Pyongyang":{
+            "difficulty":3,
             "offset": -15,
             "name": "Pyongyang",
             "coordinates": [125.00, 39.00],
@@ -134,6 +141,7 @@
             "reward":0.3
         },
         "Kabul":{
+            "difficulty":3,
             "offset": -15,
             "name": "Kabul",
             "coordinates": [69.00, 34.00],
@@ -154,7 +162,6 @@
             "inputType":"text",
             "looseMessage":"You failed !!!",
             "winMessage":"You just hacked Tok Tik !!!",
-            "reward":1.5,
             "requiredStats":{
                 "ram":10,
                 "cpu":7,

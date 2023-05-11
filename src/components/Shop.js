@@ -10,17 +10,26 @@ const Shop = ({ playerData, setPlayerData }) => {
   const [classErrorMessage, setClassErrorMessage] = useState("hidden");
 
   const getPrice = (price, currentLevel) => {
-    return Math.round(price * currentLevel * 1000) / 1000000;
+    return Math.round(price * currentLevel * 1000) / 100000;
   };
   const VerifBuy = (price, stat) => {
-    if (playerMoney > price) {
+    console.log(typeof playerMoney);
+    if (playerMoney * 100000 >= price * 100000) {
       playSoundEffect(buySoundEffect);
       setPlayerData((playerData) => ({
         ...playerData,
-        ...{ money: Math.round((playerData.money - price) * 1000) / 1000 },
+        ...{ money: Math.round((playerData.money - price) * 10000) / 10000 },
       }));
       stat.currentLevel++;
-      setPlayerMoney(playerData.money);
+      if (playerData.money < 0) {
+        setPlayerData((playerData) => ({
+          ...playerData,
+          ...{ money: 0.0 },
+        }));
+        setPlayerMoney(0);
+      } else {
+        setPlayerMoney(playerData.money);
+      }
       unlockPrimaryMission(playerData);
     } else {
       setClassErrorMessage("showError");

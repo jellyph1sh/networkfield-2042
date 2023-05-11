@@ -11,7 +11,6 @@ const unlockPrimaryMission = (playerData) => {
     }
     result.missions[key] = missions.missions[key];
   });
-  console.log(result);
   localStorage.setItem("data", JSON.stringify(result));
 };
 

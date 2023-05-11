@@ -9,13 +9,6 @@
 }
 
 #upgrade-container{
-    /* border-top: 2px solid rgb(150, 150, 150);
-    border-left: 2px solid rgb(150, 150, 150);
-    border-bottom: 2px solid rgb(150, 150, 150);
-    border-top-left-radius: 22px;
-    border-bottom-left-radius: 18px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px; */
     padding-top: 1rem;
     padding-left: 1rem;
     overflow-y: auto;
@@ -42,6 +35,7 @@
 #upgrade-container::-webkit-scrollbar-thumb{
     border-radius: 12px;
     background-color: rgb(100,100,100);
+    cursor: grab;
 }
 
 #player-money-container{

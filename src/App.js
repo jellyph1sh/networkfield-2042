@@ -32,13 +32,11 @@ import showChargingBar from "./utils/showChargingBar.js";
 //import sound
 import chargingBarSound from "./sound/charging-bar-sound.mp3";
 
-const playerTest = playerData;
-playerTest.name = "playerTest";
-playerTest.money = 0.9;
+const player = playerData;
 
 const App = () => {
   const moneyStage = useRef({ stage: 1 });
-  const [playerData, setPlayerData] = useState(playerTest);
+  const [playerData, setPlayerData] = useState(player);
   const [missionSelected, setMissionSelected] = useState();
   const [showMissionSelected, setShowMissionSelected] = useState(false);
   const [showHackingWindow, setShowHackingWindow] = useState(false);
